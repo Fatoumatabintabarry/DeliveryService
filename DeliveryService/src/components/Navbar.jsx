@@ -1,6 +1,7 @@
 import { useState } from "react"
 import {close, logo, menu } from '../assets';
 import { navLinks } from "../constants";
+import { Link } from 'react-router-dom';
 
 
 /* all the text in class name you can search it on tailwind documentation */
@@ -20,9 +21,9 @@ const Navbar = () => {
               className={`font-poppins font-normal cursor-pointer 
               text-[16px] ${index===navLinks.length-1 ? `mr-0`: `mr-10`} text-white`}
              >
-              <a href={`#${nav.id}`}> 
-              {nav.title}
-              </a>
+               <Link to={nav.id}> 
+                {nav.title}
+                </Link>
 
             </li>
           ))}
@@ -58,10 +59,9 @@ const Navbar = () => {
                   className={`font-poppins font-normal cursor-pointer 
                   text-[16px] ${index===navLinks.length-1 ? `mr-0`: `mb-4`} text-white`}
                 >
-                  <a href={`#${nav.id}`}> 
-                  {nav.title}
-                  </a>
-
+                   <Link to={nav.id}> 
+                      {nav.title}
+                   </Link>
                 </li>
               ))}
         </ul>
