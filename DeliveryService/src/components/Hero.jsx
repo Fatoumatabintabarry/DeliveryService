@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from '../style';
-import {discount, robot } from '../assets';
+import {discount, lady, robot } from '../assets';
 import GetStarted from './GetStarted';
 const Hero = () => {
   return(
   <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY} `}>
-    <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 bg-gradient-to-r from-violet-500 to-fuchsia-500`}>
+    <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 `}>
       
       <div className="flex flex-row justify-between
        items-center w-full"> 
@@ -32,11 +32,12 @@ const Hero = () => {
     </div>
     
     <div>
-      <img src={discount} alt="billing"
-      className="w-[100%] h-[100%] relative  z-[5]" 
+      <img src={lady} alt="girlinhero"className="w-[120%] h-[100%] relative " 
       />
-      <div className="z-[0] w-[40%] h-[35%] top-0 pink__gradient"></div>
-    </div>
+       
+      </div>
+    
+    
   </section>
   );
 }

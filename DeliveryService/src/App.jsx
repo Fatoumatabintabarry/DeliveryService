@@ -2,7 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/home';
 import WhyShiped from './Pages/whyshiped';
 import DeliverySolutions from './Pages/deliverysolutions';
-import login from './Pages/login';
+import pricing from './Pages/pricing';
+import Login from './Pages/login';
+import Signup from './Pages/signup';
 // ... make sure to import any other components or routes you need
 
 function App() {
@@ -11,9 +13,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/home" element={<Home />} />
-        <Route path="/why-shiped" element={<WhyShiped />} />
-        <Route path="/delivery-solutions" element={<DeliverySolutions />} />
-        <Route path="/login" element={<login />} />
+        <Route path="/whyshiped" element={<WhyShiped />} />
+        <Route path="/deliverysolutions" element={<DeliverySolutions />} />
+        
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         
         {/* ... other routes */}
       </Routes>

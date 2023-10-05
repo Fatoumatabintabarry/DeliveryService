@@ -25,7 +25,7 @@ const home = () => (
         
         </div>
         {/*4th div is for all different sections  */}
-        <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-gradient-to-r from-violet-500 to-fuchsia-500`}>
+        <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
             
           

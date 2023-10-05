@@ -7,17 +7,14 @@ export const navLinks = [
   },
  
   {
-    id: "/whyshiped ",
+    id: "/whyshiped",
     title: "Why shiped",
   },
   {
     id: "/deliverysolutions",
     title: "Delivery Solutions",
   },
-  {
-    id: "/pricing",
-    title: "pricing",
-  },
+  
   {
     id: "/login",
     title: "login",

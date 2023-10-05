@@ -28,16 +28,23 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <li> 
-              <button style={{
+        
+    <li>
+      <a href="/signup">
+          <button 
+              style={{
                   backgroundColor: '#0',
-                  
                   borderRadius: '10px',
                   color: '#fff',
                   padding: '8px',
                   boxShadow: '0 0 30px , 0 0 30px , 0 0 10px'
-                }}>Sign up </button>
-            </li>
+              }} 
+              id="loginButton">
+              Sign up 
+          </button>
+      </a>
+  </li>
+
 
         
           <div className = "sm:hidden flex flex-1 justify-end items-center">
