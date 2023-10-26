@@ -2,7 +2,7 @@ import { people01, people02, people03, facebook, instagram, linkedin, twitter, a
 
 export const navLinks = [
   {
-    id: "",
+    id: "/",
     title: "home",
   },
  
@@ -16,9 +16,14 @@ export const navLinks = [
   },
   
   {
-    id: "/login",
+    id: "/choicePage",
     title: "login",
   },
+  {
+    id:"",
+    title:"",
+  }
+
 ];
 
 export const features = [

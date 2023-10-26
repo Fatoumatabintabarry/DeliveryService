@@ -17,7 +17,7 @@ const login = () => {
         <AuthHeader
         heading="Login to your account "
         paragraph="Don't have an account yet?"
-        linkName="Signup"
+        linkName=" Signup"
         linkUrl="/signup"
         />
     <div className=' lg:w-1/2 justify-center items-center bg-white form-container'>

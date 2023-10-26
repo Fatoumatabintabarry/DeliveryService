@@ -2,6 +2,7 @@ import { useState } from "react"
 import {close, logo, menu } from '../assets';
 import { navLinks } from "../constants";
 import { Link } from 'react-router-dom';
+import "../index.css"
 
 
 /* all the text in class name you can search it on tailwind documentation */
@@ -29,22 +30,22 @@ const Navbar = () => {
           ))}
         </ul>
         
-    <li>
-      <a href="/signup">
-          <button 
-              style={{
-                  backgroundColor: '#0',
-                  borderRadius: '10px',
-                  color: '#fff',
-                  padding: '8px',
-                  boxShadow: '0 0 30px , 0 0 30px , 0 0 10px'
-              }} 
-              id="loginButton">
-              Sign up 
-          </button>
-      </a>
-  </li>
-
+        <li className="nav-li">
+    <a href="/signup" className="nav-a">
+        <button 
+            style={{
+                backgroundColor: '#0',
+                borderRadius: '10px',
+                color: '#fff',
+                padding: '8px',
+                boxShadow: '0 0 30px , 0 0 30px , 0 0 10px',
+                textDecoration: "none"
+            }} 
+            id="loginButton">
+            Sign up 
+        </button>
+    </a>
+</li>
 
         
           <div className = "sm:hidden flex flex-1 justify-end items-center">

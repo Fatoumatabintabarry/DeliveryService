@@ -16,11 +16,21 @@
 * {
   scroll-behavior: smooth;
 }
-
+/**this is flex container from signup and login page*/
 .form-container {
   display: flex;
   margin: 0 auto;
 
+}
+
+/*This is to remove the point on navbar**/
+
+.nav-li {
+  list-style-type: none;
+}
+
+.nav-a {
+  text-decoration: none;
 }
 
 .text-gradient {
