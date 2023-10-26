@@ -26,6 +26,7 @@ import people03 from "./people03.png";
 import lady from "./lady.png";
 import boite from "./boite.jpg";
 import femme from "./femme.jpg";
+import logoBlack from "./logoBlack.png"
 
 export {
   airbnb,
@@ -56,4 +57,5 @@ export {
   lady,
   boite,
   femme,
+  logoBlack,
 };
