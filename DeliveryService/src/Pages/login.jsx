@@ -7,7 +7,7 @@ import "../index.css"
 import styles from '../style'
 import '../index.css'
 import {Navbar, Hero, Testimonial, Footer} from '../components/index';
-import {boite, google, instagram } from '../assets';
+
 
 const login = () => {
   return (

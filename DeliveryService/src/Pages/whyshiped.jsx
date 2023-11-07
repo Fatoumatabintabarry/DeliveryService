@@ -13,11 +13,10 @@ const whyshiped = () => {
         <div className={`${styles.boxWidth}`}>
         <Navbar />
         </div>
-    </div>
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-purple-500`}>
-          <div className={`${styles.boxWidth}`}>
-          <Footer />
-          
+      </div>
+      <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-purple-500 `}>
+          <div className={`${styles.boxWidth} `}>
+           <Footer />
            </div>
          </div>
   </div>

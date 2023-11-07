@@ -27,7 +27,7 @@ export default function AuthHeader(
             <img
             alt="Company Logo"
             className=""
-            src={logoBlack }
+            src={logoBlack}
             />
         </a>
             </div>

@@ -7,18 +7,16 @@ import {Navbar,Footer} from '../components/index';
 const deliverysolutions = () => {
   return (
     <div className="w-full overflow-hidden ">
-    <div className={`${styles.paddingX} ${styles.flexCenter} bg-gradient-to-r from-violet-500 to-fuchsia-500`}>
-    <div className={`${styles.boxWidth}`}>
-    <Navbar />
-   
+      <div className={`${styles.paddingX} ${styles.flexCenter} bg-gradient-to-r from-violet-500 to-fuchsia-500`}>
+        <div className={`${styles.boxWidth}`}>
+        <Navbar />
+        </div>
+     </div>
+     <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-purple-500 `}>
+        <div className={`${styles.boxWidth} `}>
+         <Footer />
+        </div>
     </div>
-  </div>
-  <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-purple-500`}>
-          <div className={`${styles.boxWidth}`}>
-          <Footer />
-          
-           </div>
-         </div>
   </div>
   )
 }
