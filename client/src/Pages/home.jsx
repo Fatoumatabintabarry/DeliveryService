@@ -24,15 +24,13 @@ const home = () => (
           <Hero />
         
         </div>
-        {/*4th div is for all different sections  */}
-        <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
-          <div className={`${styles.boxWidth}`}>
-            
-          
+    </div>
+    {/*4th div is for all different sections  */}
+    <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-purple-500`}>
+          <div className={`${styles.boxWidth} bg-purple-500`}>
+          <Footer />
            </div>
          </div>
-
-    </div>
     </div>
   );
 
