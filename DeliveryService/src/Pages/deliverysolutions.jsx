@@ -13,6 +13,12 @@ const deliverysolutions = () => {
    
     </div>
   </div>
+  <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-purple-500`}>
+          <div className={`${styles.boxWidth}`}>
+          <Footer />
+          
+           </div>
+         </div>
   </div>
   )
 }

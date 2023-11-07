@@ -16,6 +16,22 @@
 * {
   scroll-behavior: smooth;
 }
+
+/****/
+.image {
+  height: 630px;
+  width: 721px;
+  }
+  .image .delivery {
+  height: 630px;
+  left: 0;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  width: 721px;
+  }
+  
+
 /**this is flex container from signup and login page*/
 .form-container {
   display: flex;
