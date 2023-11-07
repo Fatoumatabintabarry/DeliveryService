@@ -1,0 +1,187 @@
+
+
+/** this css  is for choice page  send */
+
+/***for send */
+.section-link {
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #d2d2d2;
+    border-radius: 5px;
+    height: 221px;
+    position: relative;
+    width: 436px;
+}
+
+.section-link .SVG {
+    height: 40px;
+    left: 33px;
+    object-fit: cover;
+    position: absolute;
+    top: 49px;
+    width: 40px;
+}
+
+.section-link .text-wrapper {
+    color: #000000;
+    font-family: "Verdana-Regular", Helvetica;
+    font-size: 43.3px;
+    font-weight: 400;
+    height: 58px;
+    left: 89px;
+    letter-spacing: 1.25px;
+    line-height: 55.2px;
+    position: absolute;
+    top: 38px;
+    white-space: nowrap;
+    width: 114px;
+}
+
+.section-link .img {
+    height: 28px;
+    left: 376px;
+    position: absolute;
+    top: 52px;
+    width: 28px;
+}
+
+.section-link .div-sc-dkzdqf {
+    background-color: #eaeaea;
+    height: 2px;
+    left: 33px;
+    position: absolute;
+    top: 112px;
+    width: 370px;
+}
+
+.section-link .overlap-group {
+    height: 43px;
+    left: 33px;
+    position: absolute;
+    top: 136px;
+    width: 360px;
+}
+
+.section-link .div {
+    color: #000000;
+    font-family: "Verdana-Regular", Helvetica;
+    font-size: 15.6px;
+    font-weight: 400;
+    height: 22px;
+    left: 0;
+    letter-spacing: 0.1px;
+    line-height: 20.7px;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 360px;
+}
+
+.section-link .text-wrapper-2 {
+    color: #000000;
+    font-family: "Verdana-Regular", Helvetica;
+    font-size: 15.6px;
+    font-weight: 400;
+    height: 22px;
+    left: 0;
+    letter-spacing: 0.1px;
+    line-height: 20.7px;
+    opacity: 0.6;
+    position: absolute;
+    top: 21px;
+    white-space: nowrap;
+    width: 179px;
+}
+
+/***driver */
+.section-link {
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #d2d2d2;
+    border-radius: 5px;
+    height: 221px;
+    position: relative;
+    width: 436px;
+}
+
+.section-link .SVG {
+    height: 40px;
+    left: 33px;
+    object-fit: cover;
+    position: absolute;
+    top: 49px;
+    width: 40px;
+}
+
+.section-link .text-wrapper {
+    color: #000000;
+    font-family: "Verdana-Regular", Helvetica;
+    font-size: 41.6px;
+    font-weight: 400;
+    height: 58px;
+    left: 89px;
+    letter-spacing: 1.25px;
+    line-height: 55.2px;
+    position: absolute;
+    top: 38px;
+    white-space: nowrap;
+    width: 115px;
+}
+
+.section-link .img {
+    height: 28px;
+    left: 376px;
+    position: absolute;
+    top: 52px;
+    width: 28px;
+}
+
+.section-link .div-sc-dkzdqf {
+    background-color: #eaeaea;
+    height: 2px;
+    left: 33px;
+    position: absolute;
+    top: 112px;
+    width: 370px;
+}
+
+.section-link .overlap-group {
+    height: 43px;
+    left: 33px;
+    position: absolute;
+    top: 136px;
+    width: 368px;
+}
+
+.section-link .div {
+    color: #000000;
+    font-family: "Verdana-Regular", Helvetica;
+    font-size: 15.6px;
+    font-weight: 400;
+    height: 22px;
+    left: 0;
+    letter-spacing: 0.1px;
+    line-height: 20.7px;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 368px;
+}
+
+.section-link .text-wrapper-2 {
+    color: #000000;
+    font-family: "Verdana-Regular", Helvetica;
+    font-size: 15.6px;
+    font-weight: 400;
+    height: 22px;
+    left: 0;
+    letter-spacing: 0.1px;
+    line-height: 20.7px;
+    opacity: 0.6;
+    position: absolute;
+    top: 21px;
+    white-space: nowrap;
+    width: 109px;
+}

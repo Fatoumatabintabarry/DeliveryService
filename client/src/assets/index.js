@@ -24,11 +24,12 @@ import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
 import lady from "./lady.png";
-import boite from "./boite.jpg";
+import box from "./box.png";
 import femme from "./femme.jpg";
 import logoBlack from "./logoBlack.png"
 import smilinglady from "./smilinglady.jpg"
-
+import fleche from './fleche.png'
+import volant from './volant.png'
 export {
   airbnb,
   bill,
@@ -56,8 +57,10 @@ export {
   people02,
   people03,
   lady,
-  boite,
+  box,
   femme,
   logoBlack,
   smilinglady,
+  fleche,
+  volant,
 };

@@ -2,7 +2,7 @@
 import React from 'react'
 import styles from '../style'
 import '../index.css'
-
+import GetEstimate from '../components/GetEstimate'
 //Export them from index.js file inside components before importing them in this list 
 import {Navbar, Hero, Testimonial, Footer} from '../components/index';
 
@@ -22,7 +22,7 @@ const home = () => (
         <div className={`bg-primary ${styles.flexStart} bg-gradient-to-r from-violet-500 to-fuchsia-500`}>
           <div className={`${styles.boxWidth}`}>
           <Hero />
-        
+          <GetEstimate />
         </div>
     </div>
     {/*4th div is for all different sections  */}
