@@ -30,6 +30,7 @@ import logoBlack from "./logoBlack.png"
 import smilinglady from "./smilinglady.jpg"
 import fleche from './fleche.png'
 import volant from './volant.png'
+import simple from './simple.png'
 export {
   airbnb,
   bill,
@@ -63,4 +64,5 @@ export {
   smilinglady,
   fleche,
   volant,
+  simple,
 };

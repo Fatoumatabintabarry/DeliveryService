@@ -16,7 +16,7 @@ export const navLinks = [
   },
   
   {
-    id: "/choicePage",
+    id: "/login",
     title: "login",
   },
   {

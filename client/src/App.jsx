@@ -4,7 +4,8 @@ import WhyShiped from './Pages/whyshiped';
 import DeliverySolutions from './Pages/deliverysolutions';
 import pricing from './Pages/pricing';
 import Login from './Pages/login';
-import Signup from './Pages/signup';
+import SignupSender from './Pages/SignupSender';
+import SignupDriver from './Pages/SignupDriver';
 import ChoicePage from './Pages/choicePage';
 // ... make sure to import any other components or routes you need
 
@@ -17,7 +18,8 @@ function App() {
         <Route path="/whyshiped" element={<WhyShiped />} />
         <Route path="/deliverysolutions" element={<DeliverySolutions />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/SignupSender" element={<SignupSender />} />
+        <Route path="/SignupDriver" element={<SignupDriver />} />
         <Route path="/choicePage" element={<ChoicePage/>}/>
         
         {/* ... other routes */}

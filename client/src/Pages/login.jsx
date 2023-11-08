@@ -12,7 +12,7 @@ import {box, google, instagram } from '../assets';
 const login = () => {
   return (
    //just added header component first before writing the form 
-      <div className='min-h-full h-screen  justify-center py-12 px-4 sm:px-6 lg:px-8'>
+      <div className='login-background min-h-full h-screen justify-center py-12 px-4 sm:px-6 lg:px-8'>
         
         <AuthHeader
         heading="Login to your account "
@@ -20,26 +20,45 @@ const login = () => {
         linkName=" Signup"
         linkUrl="/signup"
         />
-    <div className=' lg:w-1/2 justify-center items-center bg-white form-container'>
+    <div className=' lg:w-1/2 justify-center items-center  form-container'>
     <div className='w-full px-8 md:px-32 lg:px-24 '>
-    <form className=' rounded-md shadow-2xl p-10 '>
-    <div className="justify-center">
-        {loginFields.map(field =>(
-        
-            <div key={field.id} className="block text-gray-700 text-sm font-bold mb-">
-               <label> {field.placeholder}</label>     
-                <input 
-                className='rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm'
-                id={field.id}
-                type={field.type} 
-                name={field.name} 
-                placeholder={field.placeholder}
-                 />
+    <form className=' rounded-lg  shadow-2xl p-10 '  method="POST">
+        <div class="form-group">
+          <label for="profile">I am a: </label>
+                <select name="profile" id="profile">
+                  <option value="Sender">Job Seeker</option>
+                  <option value="Driver">Employer</option>
+                  <option value="Admin">Admin</option>
+                   </select>                 
+          </div>
+          <br />
+        <div className="justify-center">
+            {loginFields.map(field =>(
+            
+              <div key={field.id} className="block text-gray-700 text-sm font-bold mb-">
+                <label className='relative text-sm text-gray-500 dark:text-gray-400 
+                duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0]
+                 left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
+                 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 
+                 peer-focus:-translate-y-4'> 
+                
+                </label>   
 
-            </div>
+                 <input 
+                  className='block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 
+                  dark:bg-gray-700 border-0 border-b-4 border-gray-300 appearance-none dark:text-white
+                   dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 
+                   focus:border-blue-600 peer'
+                  id={field.id}
+                  type={field.type} 
+                  name={field.name} 
+                  placeholder={field.placeholder}
+                  />
 
-        ))}
-        <br />
+               </div>
+
+             ))}
+         <br />
         <div>
             <button type="submit" className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                         Login

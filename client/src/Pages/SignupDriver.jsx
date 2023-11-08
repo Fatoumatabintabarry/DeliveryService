@@ -4,7 +4,7 @@ import AuthHeader from '../components/authHeader';
 import { loginFields, signupFields } from '../constants/formFields';
 import "../index.css"
 
-const signup = () => {
+const SignupDriver = () => {
     return (
      //just added header component first before writing the form 
         <div className='min-h-full h-screen  justify-center py-12 px-4 sm:px-6 lg:px-8'>
@@ -52,4 +52,4 @@ const signup = () => {
   }
   
   
-export default signup
+export default SignupDriver;

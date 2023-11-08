@@ -11,7 +11,7 @@ const home = () => (
 <div className="w-full overflow-hidden ">
 
         {/* 2nd  div is navbar section . We are making a direct reference to the style.js file */}
-        <div className={`${styles.paddingX} ${styles.flexCenter} bg-gradient-to-r from-violet-500 to-fuchsia-500`}>
+        <div className={`${styles.paddingX} ${styles.flexCenter} bg-gradient-to-r from-fuchsia-600 to-purple-600`}>
           <div className={`${styles.boxWidth}`}>
           <Navbar />
          
@@ -19,7 +19,7 @@ const home = () => (
         </div>
 
         {/*3rd div is the hero section */}
-        <div className={`bg-primary ${styles.flexStart} bg-gradient-to-r from-violet-500 to-fuchsia-500`}>
+        <div className={`bg-primary ${styles.flexStart} bg-gradient-to-r from-fuchsia-600 to-purple-600`}>
           <div className={`${styles.boxWidth}`}>
           <Hero />
           <GetEstimate />

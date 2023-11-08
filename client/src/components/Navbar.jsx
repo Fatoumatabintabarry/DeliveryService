@@ -31,7 +31,7 @@ const Navbar = () => {
         </ul>
         
         <li className="nav-li">
-    <a href="/signup" className="nav-a">
+    <a href="/choicePage" className="nav-a">
         <button 
             style={{
                 backgroundColor: '#0',

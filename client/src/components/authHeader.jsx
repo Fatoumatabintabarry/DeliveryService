@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { logo, logoBlack } from '../assets'
+import { logo, simple } from '../assets'
 /* <Header/> component takes four props:
 
 heading  displays the top;
@@ -27,7 +27,7 @@ export default function AuthHeader(
             <img
             alt="Company Logo"
             className=""
-            src={logoBlack }
+            src={simple }
             />
         </a>
             </div>
