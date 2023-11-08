@@ -22,7 +22,7 @@ const home = () => (
         <div className={`bg-primary ${styles.flexStart} bg-gradient-to-r from-fuchsia-600 to-purple-600`}>
           <div className={`${styles.boxWidth}`}>
           <Hero />
-          <GetEstimate />
+         
         </div>
     </div>
     {/*4th div is for all different sections  */}

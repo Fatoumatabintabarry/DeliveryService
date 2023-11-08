@@ -45,10 +45,7 @@ const login = () => {
                 </label>   
 
                  <input 
-                  className='block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 
-                  dark:bg-gray-700 border-0 border-b-4 border-gray-300 appearance-none dark:text-white
-                   dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 
-                   focus:border-blue-600 peer'
+                  className='text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-100 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400'
                   id={field.id}
                   type={field.type} 
                   name={field.name} 
