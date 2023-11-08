@@ -18,7 +18,7 @@ const RequestDelivery = () => {
               <path d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"></path>
             </g>
           </svg>
-          <span className="pl-2 mx-1">Create new shipping label</span>
+          <span className="pl-2 mx-1">Request a delivery</span>
         </button>
         
         {/* Sender Information */}

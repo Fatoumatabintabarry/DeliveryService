@@ -30,22 +30,8 @@ const Navbar = () => {
           ))}
         </ul>
         
-        <li className="nav-li">
-    <a href="/choicePage" className="nav-a">
-        <button 
-            style={{
-                backgroundColor: '#0',
-                borderRadius: '10px',
-                color: '#fff',
-                padding: '8px',
-                boxShadow: '0 0 30px , 0 0 30px , 0 0 10px',
-                textDecoration: "none"
-            }} 
-            id="loginButton">
-            Sign up 
-        </button>
-    </a>
-</li>
+         
+     
 
         
           <div className = "sm:hidden flex flex-1 justify-end items-center">
@@ -56,6 +42,7 @@ const Navbar = () => {
             object-contain"
             onClick={()=> setToggle((prev)=> !prev)}
              />
+
             <div
             className={`${toggle ?'flex':'hidden'} p-6 bg-black-gradient absolute top-20 right-0 
             mx-4 my-2 min-w [140px] rounded-xl sidebar`}>
