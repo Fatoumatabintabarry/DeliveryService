@@ -12,10 +12,9 @@ const home = () => (
 <div className="w-full overflow-hidden ">
 
         {/* 2nd  div is navbar section . We are making a direct reference to the style.js file */}
-        <div className={`${styles.paddingX} ${styles.flexCenter} login-background`}>
+        <div className={`bg-primary${styles.paddingX} ${styles.flexCenter} login-background`}>
           <div className={`${styles.boxWidth}`}>
           <Navbar2 />
-         
           </div>
         </div>
 
@@ -23,9 +22,14 @@ const home = () => (
         <div className={`bg-primary ${styles.flexStart} bg-white `}>
           <div className={`${styles.boxWidth}`}>
           <Hero />
-         
+         </div>
         </div>
-    </div>
+
+        <div className={`bg-primary ${styles.paddingY} ${styles.flexStart} bg-[#FCF9FC]  `}>
+          <div className={`${styles.boxWidth}`}>
+            <GetEstimate />
+          </div>
+         </div>
     {/*4th div is for all different sections  */}
     <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-[#5F54E3]`}>
           <div className={`${styles.boxWidth} bg-purple-500`}>

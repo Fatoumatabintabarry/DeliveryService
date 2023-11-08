@@ -185,3 +185,381 @@
     white-space: nowrap;
     width: 109px;
 }
+
+/*****This is the actual css for Getestimate component */
+.section {
+    background-color: #ffffff;
+    border-radius: 24px;
+    height: 200px;
+    position: relative;
+    width: 1088px;
+}
+
+.section .heading-get {
+    color: #36134a;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 30px;
+    font-weight: 600;
+    height: 36px;
+    left: 32px;
+    letter-spacing: 0;
+    line-height: 36px;
+    position: absolute;
+    top: 31px;
+    white-space: nowrap;
+    width: 195px;
+}
+
+.section .overlap-group {
+    height: 40px;
+    left: 32px;
+    position: absolute;
+    top: 80px;
+    width: 165px;
+}
+
+.section .form-input {
+    background-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-color: #d1d5db;
+    height: 40px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 165px;
+}
+
+.section .div-placeholder {
+    height: 14px;
+    position: relative;
+    top: 12px;
+    width: 137px;
+}
+
+.section .text-wrapper {
+    color: transparent;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 14px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: -1px;
+    white-space: nowrap;
+    width: 80px;
+}
+
+.section .form-label-ship-from {
+    color: #6b7280;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 20px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: absolute;
+    top: 11px;
+    white-space: nowrap;
+    width: 67px;
+}
+
+.section .form-button-SVG {
+    height: 16px;
+    left: 145px;
+    position: absolute;
+    top: 12px;
+    width: 16px;
+}
+
+.section .form-SVG {
+    height: 24px;
+    left: 217px;
+    object-fit: cover;
+    position: absolute;
+    top: 92px;
+    width: 24px;
+}
+
+.section .overlap {
+    height: 40px;
+    left: 255px;
+    position: absolute;
+    top: 80px;
+    width: 165px;
+}
+
+.section .div {
+    color: transparent;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 14px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: -1px;
+    white-space: nowrap;
+    width: 57px;
+}
+
+.section .form-label-ship-to {
+    color: #6b7280;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 20px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: absolute;
+    top: 11px;
+    white-space: nowrap;
+    width: 48px;
+}
+
+.section .overlap-2 {
+    height: 53px;
+    left: 456px;
+    position: absolute;
+    top: 67px;
+    width: 199px;
+}
+
+.section .form-label-package {
+    color: #4b5563;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    height: 16px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 16px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 84px;
+}
+
+.section .form-button {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-color: #d1d5db;
+    height: 40px;
+    left: 0;
+    position: absolute;
+    top: 13px;
+    width: 199px;
+}
+
+.section .span-absolute {
+    height: 20px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    width: 85px;
+}
+
+.section .text-wrapper-2 {
+    color: #36134a;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 14px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: absolute;
+    top: 2px;
+    white-space: nowrap;
+    width: 85px;
+}
+
+.section .SVG {
+    height: 20px;
+    left: 171px;
+    position: absolute;
+    top: 9px;
+    width: 20px;
+}
+
+.section .overlap-3 {
+    height: 54px;
+    left: 675px;
+    position: absolute;
+    top: 66px;
+    width: 72px;
+}
+
+.section .div-wrapper {
+    background-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-color: #d1d5db;
+    height: 40px;
+    left: 0;
+    position: absolute;
+    top: 14px;
+    width: 72px;
+}
+
+.section .div-2 {
+    height: 40px;
+    position: relative;
+    top: -1px;
+    width: 57px;
+}
+
+.section .text-wrapper-3 {
+    color: #36134a;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 14px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 40px;
+    position: absolute;
+    top: 12px;
+    white-space: nowrap;
+    width: 5px;
+}
+
+.section .form-label {
+    height: 24px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 42px;
+}
+
+.section .text-wrapper-4 {
+    color: #4b5563;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    height: 12px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: absolute;
+    top: 5px;
+    white-space: nowrap;
+    width: 43px;
+}
+
+.section .overlap-4 {
+    height: 53px;
+    left: 767px;
+    position: absolute;
+    top: 67px;
+    width: 64px;
+}
+
+.section .form-label-lbs {
+    color: #4b5563;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    height: 16px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 16px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 20px;
+}
+
+.section .form-button-2 {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-color: #d1d5db;
+    height: 40px;
+    left: 0;
+    position: absolute;
+    top: 13px;
+    width: 64px;
+}
+
+.section .span-absolute-2 {
+    height: 20px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    width: 23px;
+}
+
+.section .text-wrapper-5 {
+    color: #36134a;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 14px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: absolute;
+    top: 2px;
+    white-space: nowrap;
+    width: 23px;
+}
+
+.section .img {
+    height: 20px;
+    left: 36px;
+    position: absolute;
+    top: 9px;
+    width: 20px;
+}
+
+.section .form-button-advanced {
+    color: #6b7280;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    height: 12px;
+    left: 851px;
+    letter-spacing: 0;
+    line-height: 16px;
+    position: absolute;
+    text-align: center;
+    text-decoration: underline;
+    top: 97px;
+    white-space: nowrap;
+    width: 62px;
+}
+
+.section .form-button-3 {
+    background-color: #ffa23c;
+    border-radius: 24px;
+    box-shadow: 0px 1px 2px #0000000d;
+    height: 48px;
+    left: 925px;
+    position: absolute;
+    top: 80px;
+    width: 131px;
+}
+
+.section .text-wrapper-6 {
+    color: #ffffff;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    height: 14px;
+    left: 20px;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 16px;
+    white-space: nowrap;
+    width: 91px;
+}
