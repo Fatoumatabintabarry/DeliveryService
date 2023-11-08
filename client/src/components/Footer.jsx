@@ -6,7 +6,7 @@ import { footerLinks } from '../constants';
 const Footer = () => {
   return (
     <section className={`${styles.flexCenter}${styles.paddingY} flex-col bg-[#5F54E3] `}>
-    <div className={`${styles.flexStart} md:flex-row flex-col mb-6 w-full`}>
+    <div className={`${styles.flexStart} md:flex-row flex-col mb-6 w-full `}>
       
       <div>
         <img src={logo} alt="logo" className='w-[266px] h-[72px] object-contain' />

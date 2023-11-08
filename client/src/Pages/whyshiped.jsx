@@ -6,6 +6,7 @@ import '../index.css'
 //Export them from index.js file inside components before importing them in this list 
 import {Navbar, Hero, Testimonial, Footer} from '../components/index';
 import Navbar2 from '../components/navbar2';
+import Features from '../components/Features';
 
 const whyshiped = () => {
   return (
@@ -15,6 +16,8 @@ const whyshiped = () => {
           <Navbar2 />
           </div>
       </div>
+      
+        
 
        {/*3rd div is the testimonial section section */}
        <div className={`bg-primary ${styles.flexStart} bg-white `}>
@@ -23,12 +26,13 @@ const whyshiped = () => {
          </div>
         </div>
 
+
        {/*4th div is for all different sections  */}
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-[#5F54E3]`}>
-          <div className={`${styles.boxWidth} bg-purple-500`}>
+       <div className={` ${styles.paddingX} ${styles.flexStart} bg-[#5F54E3] `}>
+          <div className={`${styles.boxWidth} bg-[#5F54E3] `}>
           <Footer />
            </div>
-     </div>
+         </div>
     
       
   </div>

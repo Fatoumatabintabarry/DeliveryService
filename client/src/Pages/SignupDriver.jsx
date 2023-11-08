@@ -10,7 +10,7 @@ const SignupDriver = () => {
         <div className='min-h-full h-screen  justify-center py-12 px-4 sm:px-6 lg:px-8'>
           
           <AuthHeader
-          heading="Sign up as a Sender "
+          heading="Sign up as a Driver "
           paragraph="Already have an account ?"
           linkName="login "
           linkUrl="/login"
