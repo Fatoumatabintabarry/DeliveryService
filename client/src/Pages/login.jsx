@@ -12,7 +12,7 @@ import {box, google, instagram } from '../assets';
 const login = () => {
   return (
    //just added header component first before writing the form 
-      <div className='login-background min-h-full h-screen justify-center py-12 px-4 sm:px-6 lg:px-8'>
+      <div className=' min-h-full h-screen justify-center py-12 px-4 sm:px-6 lg:px-8'>
         
         <AuthHeader
         heading="Login to your account "

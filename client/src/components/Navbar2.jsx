@@ -20,21 +20,12 @@ const Navbar2 = () => {
 
         {/* Get started button */}
         <div className="flex md:order-2"> 
-          <a href="/choicePage" className="nav-a">
-              <button type="button" className="text-white bg-purple-700 hover:bg-blue-800  
-          focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm
-           "
-                  style={{
-                      backgroundColor: '#0',
-                      borderRadius: '10px',
-                      color: '#fff',
-                      padding: '8px',
-                      boxShadow: '0 0 30px , 0 0 30px , 0 0 10px',
-                      textDecoration: "none"
-                  }} 
-                  id="loginButton">
-                  Sign up
-              </button>
+          
+          <a href="/choicePage" className="inline-flex items-center justify-center px-5 py-3 text-base
+           font-medium text-center text-gray-900 border border-gray-300 rounded-lg 
+           hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white 
+           dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"  id="loginButton">
+            Sign up
           </a>
           
           {/* Hamburger button */}
