@@ -22,7 +22,7 @@ const deliverysolutions = () => {
       </div>
 
 
-      <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-purple-500`}>
+      <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-[#5F54E3]`}>
         <div className={`${styles.boxWidth} bg-purple-500`}>
           <Footer />
         </div>

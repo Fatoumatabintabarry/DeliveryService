@@ -15,8 +15,16 @@ const whyshiped = () => {
           <Navbar2 />
           </div>
       </div>
+
+       {/*3rd div is the testimonial section section */}
+       <div className={`bg-primary ${styles.flexStart} bg-white `}>
+          <div className={`${styles.boxWidth}`}>
+          <Testimonial />
+         </div>
+        </div>
+
        {/*4th div is for all different sections  */}
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-purple-500`}>
+    <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} bg-[#5F54E3]`}>
           <div className={`${styles.boxWidth} bg-purple-500`}>
           <Footer />
            </div>
