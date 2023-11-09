@@ -8,7 +8,6 @@ dotenv.config();
 //import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 //import orderRoutes from './routes/orderRoutes.js';
-import uploadRoutes from './routes/uploadRoutes.js';
 
 mongoose.connect('mongodb://127.0.0.1:27017/delivery', {useNewUrlParser: true})
 .then(() => {
