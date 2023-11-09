@@ -26,13 +26,13 @@ const home = () => (
          </div>
         </div>
 
-        <div className={`bg-primary ${styles.paddingY} ${styles.flexStart} login-background  `}>
+        <div className={`bg-primary ${styles.paddingY} ${styles.flexStart} bg-[#F4F5FA]  `}>
           <div className={`${styles.boxWidth}`}>
             <GetEstimate />
           </div>
          </div>
           {/*3rd div is the hero section */}
-        <div className={`bg-primary ${styles.flexStart} bg-white `}>
+        <div className={`bg-primary ${styles.flexStart}  `}>
           <div className={`${styles.boxWidth}`}>
           <Features />
          </div>

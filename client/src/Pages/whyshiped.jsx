@@ -16,8 +16,7 @@ const whyshiped = () => {
           <Navbar2 />
           </div>
       </div>
-      
-        
+   
 
        {/*3rd div is the testimonial section section */}
        <div className={`bg-primary ${styles.flexStart} bg-white `}>
