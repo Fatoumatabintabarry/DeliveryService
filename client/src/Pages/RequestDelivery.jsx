@@ -70,7 +70,7 @@ const RequestDelivery = () => {
              {/* Button */}
         <button type="button" className="relative w-full flex 
         justify-center items-center px-5 py-2.5 font-medium tracking-wide text-white 
-        capitalize bg-black rounded-md hover:bg-gray-900 focus:outline-none transition 
+        capitalize bg-[#5F54E3] rounded-md hover:bg-gray-900 focus:outline-none transition 
         duration-300 transform active:scale-95 ease-in-out">
           {/* SVG */}
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#FFFFFF">
@@ -81,7 +81,7 @@ const RequestDelivery = () => {
               <path d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"></path>
             </g>
           </svg>
-          <span className="pl-2 mx-1">Request a delivery</span>
+          <span className="pl-2 mx-1 bg-[#5F54E3]">Request a delivery</span>
         </button>
          
           </div>

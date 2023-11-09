@@ -2,18 +2,15 @@
 import React from 'react'
 import styles from '../style'
 import '../index.css'
+import {Navbar,Testimonial, Footer} from '../components/index';
 
-//Export them from index.js file inside components before importing them in this list 
-import {Navbar, Hero, Testimonial, Footer} from '../components/index';
-import Navbar2 from '../components/navbar2';
-import Features from '../components/Features';
 
 const whyshiped = () => {
   return (
     <div className="  w-full overflow-hidden ">
       <div className={`${styles.paddingX} ${styles.flexCenter} bg-gradient-to-r from-violet-500 to-fuchsia-500`}>
           <div className={`${styles.boxWidth}`}>
-          <Navbar2 />
+          <Navbar />
           </div>
       </div>
    

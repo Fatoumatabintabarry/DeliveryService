@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../style'
 import { arrowUp } from '../assets'
-
+/**This is the second component of the choice page where we pick between sender and driver  */
 const GetStarted = () => (
     
     <div className={`${styles.flexCenter} w-[140px]

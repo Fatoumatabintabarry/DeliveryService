@@ -12,7 +12,8 @@ const Testimonial = () => {
             What our <span className="text-blue-500">customers</span> are saying
         </h1>
 
-        <div className="grid w-full justify-center grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4 lg:mt-16">
+        <div className="grid w-full justify-center grid-cols-1 gap-8 mt-8 md:grid-cols-2 
+        lg:grid-cols-4 2xl:grid-cols-4 lg:mt-16">
          
           {/* Repeat this block for each testimonial */}
           <div className="w-full p-8 bg-white rounded-md shadow-lg dark:bg-gray-800">

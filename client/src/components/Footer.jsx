@@ -1,15 +1,15 @@
 import React from 'react'
 import styles from '../style';
-import { logo } from '../assets';
+import { logoWhite } from '../assets';
 import { footerLinks } from '../constants';
 
 const Footer = () => {
   return (
-    <section className={`${styles.flexCenter}${styles.paddingY} flex-col bg-[#5F54E3] `}>
-    <div className={`${styles.flexStart} md:flex-row flex-col mb-6 w-full `}>
+    <section className={`${styles.flexCenter}${styles.paddingY} flex-col bg-[#5F54E3] mt-6 pt-6`}>
+    <div className={`${styles.flexStart} md:flex-row flex-col mb-6 w-full mb-6 `}>
       
       <div>
-        <img src={logo} alt="logo" className='w-[266px] h-[72px] object-contain' />
+        <img src={logoWhite} alt="logo" className='w-[266px] h-[72px] object-contain' />
        
       </div>
 
@@ -36,10 +36,11 @@ const Footer = () => {
       </div>
     </div>
 
-    <div className='w-full flex justify-between items-center md:flex-row flex-col pt-6 
+    <div className='w-full items-center md:flex-row  pt-2 
     border-t-[1px] border-t-[#3f3E45]'>
-      <p className='font-poppins font-normal text-center text-[18px] 
-    leading-[27px] text-white'> SOEN343 project. </p>
+      <p className='text-center text-[18px] 
+    leading-[27px] text-white'> @SOEN343 project.
+     </p>
     </div>
     </section>
   )

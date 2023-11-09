@@ -3,9 +3,7 @@ import React from 'react'
 import styles from '../style'
 import '../index.css'
 import GetEstimate from '../components/GetEstimate'
-//Export them from index.js file inside components before importing them in this list 
 import {Navbar, Hero, Testimonial, Footer} from '../components/index';
-import Navbar2 from '../components/navbar2';
 import Features from '../components/Features';
 
 const home = () => (
@@ -15,7 +13,7 @@ const home = () => (
         {/* 2nd  div is navbar section . We are making a direct reference to the style.js file */}
         <div className={`bg-primary${styles.paddingX} ${styles.flexCenter} bg-[#FCF9FC]`}>
           <div className={`${styles.boxWidth}`}>
-          <Navbar2 />
+          <Navbar />
           </div>
         </div>
 
@@ -26,7 +24,7 @@ const home = () => (
          </div>
         </div>
 
-        <div className={`bg-primary ${styles.paddingY} ${styles.flexStart} bg-[#F4F5FA]  `}>
+        <div className={` ${styles.paddingY} ${styles.flexStart} bg-[#F4F5FA]`}>
           <div className={`${styles.boxWidth}`}>
             <GetEstimate />
           </div>

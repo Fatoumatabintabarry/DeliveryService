@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/home';
 import WhyShiped from './Pages/whyshiped';
 import DeliverySolutions from './Pages/deliverysolutions';
-import pricing from './Pages/pricing';
 import Login from './Pages/login';
 import SignupSender from './Pages/SignupSender';
 import SignupDriver from './Pages/SignupDriver';

@@ -1,5 +1,5 @@
 import React from 'react'
-import ChoiceHeader from '../components/choiceHeader'
+import ChoiceHeader from '../components/ChoicePageHeader'
 import "../quotation.css"
 import { box, volant, fleche,  } from '../assets'
 import "../index.css"

@@ -1,7 +1,7 @@
 
 import React from 'react'
 import AuthHeader from '../components/authHeader';
-import { loginFields, signupFields } from '../constants/formFields';
+import { signupFields } from '../constants/formFields';
 import "../index.css"
 
 const SignupDriver = () => {

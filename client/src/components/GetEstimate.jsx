@@ -10,12 +10,12 @@ const GetEstimate = () => {
   };
 
   return (
-<div className='flex justify-center items-center form-container'>
+<div className='flex justify-center items-center form-container '>
   <div className='w-full px-4 md:px-32 lg:px-24'>
     
     <form className="bg-white rounded-lg shadow-xl p-8 mt-10 md:mt-0 border-indigo-600 ">
       <h1 className="text-2xl md:text-3xl font-bold text-center mb-6">
-        Get Estimate
+        Get Estimate AKA
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-4  mb-6">
