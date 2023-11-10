@@ -1,47 +1,5 @@
 {
-  "name": "deliveryservice",
-  "version": "1.0.0",
-  "description": "delivery service application - soen343",
-  "type": "module",
-  "main": "server.js",
   "dependencies": {
-    "bson": "^6.2.0",
-    "debug": "^4.3.4",
-    "express": "^4.18.2",
-    "kareem": "^2.5.1",
-    "memory-pager": "^1.5.0",
-    "mongodb": "^6.2.0",
-    "mongodb-connection-string-url": "^2.6.0",
-    "mongoose": "^8.0.0",
-    "mpath": "^0.9.0",
-    "mquery": "^5.0.0",
-    "ms": "^2.1.3",
-    "punycode": "^2.3.1",
-    "sift": "^16.0.1",
-    "sparse-bitfield": "^3.0.3",
-    "tr46": "^3.0.0",
-    "undici-types": "^5.26.5",
-    "webidl-conversions": "^7.0.0",
-    "whatwg-url": "^11.0.0"
-  },
-  "scripts": {
-    "start": "node server/server.js",
-    "server": "nodemon server/server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Fatoumatabintabarry/DeliveryService.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Fatoumatabintabarry/DeliveryService/issues"
-  },
-  "homepage": "https://github.com/Fatoumatabintabarry/DeliveryService#readme",
-  "devDependencies": {
-    "concurrently": "^8.2.2",
-    "nodemon": "^3.0.1"
+    "body-parser": "^1.20.2"
   }
 }
