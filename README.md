@@ -2,10 +2,18 @@
 
 The project is about a software system for delivery service.
 
-in order to run the front end follow the following steps:
+Run the frond end only:
 
 - cd to client
 - run "npm start" in the terminal
+
+Run the backend only:
+
+-run "npm run server" in the root directory
+
+Run the frontend and the backend:
+
+-run "npm run dev" in the root directory
 
 Team:
 
