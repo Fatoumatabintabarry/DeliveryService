@@ -1,40 +1,39 @@
-//install nodemon: keeps the backend server running
-//install concurrently: runs the front end and the back end in one command
+import path from 'path';
 import express from 'express';
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import cookieParser from 'cookie-parser';
 dotenv.config();
-//import productRoutes from './routes/productRoutes.js';
+import connectDB from './config/db.js';
+import cookieParser from 'cookie-parser';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import userRoutes from './routes/userRoutes.js';
-//import orderRoutes from './routes/orderRoutes.js';
 
-mongoose.connect('mongodb://127.0.0.1:27017/delivery', {useNewUrlParser: true})
-.then(() => {
-    console.log("db connected");
-})
-.catch(err => {
-    console.log("error: db failed connection");
-    console.log(err);
-})
+const port = process.env.PORT || 5000;
 
-
-const port = 5000;
+connectDB();
 
 const app = express();
 
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(cookieParser());
 
-//app.use('/api/products', itemRoutes);
 app.use('/api/users', userRoutes);
-//app.use('/api/orders', orderRoutes);
 
-app.get('/', (req,res) =>{
-    res.send('API is running...');
-});
+if (process.env.NODE_ENV === 'production') {
+  const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, '/frontend/dist')));
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'))
+  );
+} else {
+  app.get('/', (req, res) => {
+    res.send('API is running....');
+  });
+}
 
+app.use(notFound);
+app.use(errorHandler);
+
+app.listen(port, () => console.log(`Server started on port ${port}`));

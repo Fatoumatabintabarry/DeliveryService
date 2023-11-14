@@ -16,16 +16,9 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    isDriver:{ // check if user is a driver or sender; default is sender
-      type: Boolean,
-      required: true,
-      default: false
-    },
-    isAdmin: { // customer service rep
-      type: Boolean,
-      required: true,
-      default: false
-    }
+  },
+  {
+    timestamps: true,
   }
 );
 
