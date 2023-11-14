@@ -51,10 +51,10 @@ const signupFields=[
     
 },
 {
-id:"ConfirmPassword",
-name:"Confirm Password",
-type:"Confirm Password",
-placeholder:"Confirm Password"
+id:"Password",
+name:" Password",
+type:" Password",
+placeholder:"Password"
 
 }
 
