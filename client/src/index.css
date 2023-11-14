@@ -120,9 +120,9 @@
 
 /* index.css */
 .login-background {
-  background: linear-gradient(-45deg, #ffffff, #9731E7, #5F54E3 );
+  background: linear-gradient(-45deg,#ffffff, #9731E7, #5F54E3, #5f64E3 );
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  animation: gradient 5s ease infinite;
 }
 
 @keyframes gradient {

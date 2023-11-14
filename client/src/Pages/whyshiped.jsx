@@ -4,6 +4,8 @@ import styles from '../style'
 import '../index.css'
 import {Navbar,Testimonial, Footer} from '../components/index';
 import CommunicationForm from '../components/CommunicationForm';
+import Aboutus from '../components/Aboutus';
+import ChoicePageHeader from '../components/ChoicePageHeader';
 
 
 const whyshiped = () => {
@@ -18,6 +20,23 @@ const whyshiped = () => {
 
       <div className={`${styles.paddingX} ${styles.flexCenter} `}>
           <div className={`${styles.boxWidth}`}>
+          <Aboutus />
+         </div>
+        </div>
+
+    
+      
+      
+
+
+      <div className={`${styles.paddingX} ${styles.flexCenter} bg-[#F1F2F7] `}>
+          <div className={`${styles.boxWidth}`}>
+          <ChoicePageHeader
+         heading="Send us an email "
+         paragraph="Avg 1hr response time during the business day?"
+         linkName=" Signup"
+        
+        />
           <CommunicationForm />
          </div>
         </div>
@@ -29,6 +48,7 @@ const whyshiped = () => {
          </div>
         </div>
 
+     
 
        {/*4th div is for all different sections  */}
        <div className={` ${styles.paddingX} ${styles.flexStart} bg-[#5F54E3] `}>

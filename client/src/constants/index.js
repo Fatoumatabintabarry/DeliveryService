@@ -11,7 +11,7 @@ export const navLinks = [
   },
   {
     id: "/whyshiped",
-    title: "Why shiped",
+    title: "Support",
   },
  
   
