@@ -1,4 +1,3 @@
-
 import React from 'react'
 import AuthHeader from '../components/authHeader';
 import { signupFields } from '../constants/formFields';
