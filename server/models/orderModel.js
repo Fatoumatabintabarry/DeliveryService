@@ -52,6 +52,17 @@ const orderSchema = mongoose.Schema(
   }
 );
 
+orderSchema.pre('save', async function () {
+  let price = 0;
+
+  for(let i = 0; i < this.orderItems.length; i++)
+    price += this.orderItems[i].price * this.orderItems[i].qty;
+
+  this.itemsPrice = price;
+  this.taxPrice = this.itemsPrice * 0.15;
+  this.totalPrice = this.itemsPrice + this.taxPrice + this.shippingCost;
+});
+
 const Order = mongoose.model('Order', orderSchema);
 
 export default Order;

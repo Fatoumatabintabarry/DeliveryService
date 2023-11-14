@@ -7,7 +7,7 @@ import cookieParser from 'cookie-parser';
 dotenv.config();
 //import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
-//import orderRoutes from './routes/orderRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
 
 mongoose.connect('mongodb://127.0.0.1:27017/delivery', {useNewUrlParser: true})
 .then(() => {
@@ -30,7 +30,7 @@ app.use(cookieParser());
 
 //app.use('/api/products', itemRoutes);
 app.use('/api/users', userRoutes);
-//app.use('/api/orders', orderRoutes);
+app.use('/api/orders', orderRoutes);
 
 app.get('/', (req,res) =>{
     res.send('API is running...');
