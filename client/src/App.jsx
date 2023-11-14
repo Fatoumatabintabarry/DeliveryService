@@ -25,7 +25,7 @@ function App() {
           <Route path="/choicePage" element={<ChoicePage />} />
           <Route path="/driver-portal" element={<DriverPortal />} />
           <Route path="/driver-rides" element={<DriverRides />} />
-
+          
           {/* ... other routes */}
         </Routes>
         {/* other components like Footer */}

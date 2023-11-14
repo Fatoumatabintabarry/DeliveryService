@@ -86,11 +86,7 @@ const DriverPortal = () => {
         </div>
       </div>
 
-      <div className={`${styles.paddingX} ${styles.flexStart} bg-[#5F54E3]`}>
-        <div className={`${styles.boxWidth}`}>
-          <Footer />
-        </div>
-      </div>
+      
     </div>
   );
 };

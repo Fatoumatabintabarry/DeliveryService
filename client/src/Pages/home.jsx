@@ -5,6 +5,7 @@ import '../index.css'
 import GetEstimate from '../components/GetEstimate'
 import {Navbar, Hero, Testimonial, Footer} from '../components/index';
 import Features from '../components/Features';
+import DriverPortal from './DriverPortal';
 
 const home = () => (
     // 1rst div will wrap up our entire page 
@@ -23,12 +24,20 @@ const home = () => (
           <Hero />
          </div>
         </div>
+        
 
         <div className={` ${styles.paddingY} ${styles.flexStart} bg-[#F4F5FA]`}>
           <div className={`${styles.boxWidth}`}>
             <GetEstimate />
           </div>
          </div>
+
+         <div className={` ${styles.paddingY} ${styles.flexStart} bg-[#F4F5FA]`}>
+          <div className={`${styles.boxWidth}`}>
+            <DriverPortal />
+          </div>
+         </div>
+         
           {/*3rd div is the hero section */}
         <div className={`bg-primary ${styles.flexStart}  `}>
           <div className={`${styles.boxWidth}`}>
@@ -36,7 +45,7 @@ const home = () => (
          </div>
         </div>
 
-         
+        /* 
     {/*4th div is for all different sections  */}
     <div className={` ${styles.paddingX} ${styles.flexStart} bg-[#5F54E3] `}>
           <div className={`${styles.boxWidth} bg-[#5F54E3] `}>
