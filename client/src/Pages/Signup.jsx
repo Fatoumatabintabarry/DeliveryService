@@ -9,25 +9,42 @@ const SignupSender = () => {
         <div className='min-h-full h-screen  justify-center py-12 px-4 sm:px-6 lg:px-8'>
           
           <AuthHeader
-          heading="Sign up as a Sender "
+          heading="Get started! "
           paragraph="Already have an account ?"
-          linkName="login "
+          linkName=" login "
           linkUrl="/login"
           />
       <div className=' lg:w-1/2 justify-center items-center bg-white form-container '>
       <div className='w-full px-8 md:px-32 lg:px-24  '>
       <form className=' rounded-md shadow-2xl p-10  '>
+      <div class="form-group">
+                <label for="profile">I am a: </label>
+                      <select name="profile" id="profile">
+                        <option value="Sender">Sender</option>
+                        <option value="Driver">Driver</option>
+                        <option value="Admin">Admin</option>
+                        </select>                 
+        </div>
+        <br />
       <div className="justify-center">
           {signupFields.map(field =>(
           
-              <div key={field.id} className="block text-gray-700 text-sm font-bold mb-">
-                 <label className='block text-sm font-medium leading-6 text-gray-90'> {field.placeholder} </label>     
+              <div key={field.id} className="block text-gray-700 text-sm font-bold ">
+                 <label className='relative text-sm text-gray-500 dark:text-gray-400 
+                    duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0]
+                    left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
+                    peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+                    peer-focus:scale-75 peer-focus:-translate-y-4'> </label>     
                   <input 
-                  className='rounded-md appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm'
+                  className='text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 
+                  text-base transition duration-500 ease-in-out transform border-transparent 
+                  rounded-lg bg-gray-100 focus:border-blueGray-500 focus:bg-white
+                  dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 
+                  ring-offset-current ring-offset-2 ring-gray-400'
                   id={field.id}
                   type={field.type} 
                   name={field.name} 
-                  
+                  placeholder={field.placeholder}
                    />
   
               </div>
