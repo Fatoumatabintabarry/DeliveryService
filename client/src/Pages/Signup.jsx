@@ -1,73 +1,120 @@
-import React from 'react'
-import AuthHeader from '../components/authHeader';
-import { signupFields } from '../constants/formFields';
-import "../index.css"
+import { useState, useEffect } from 'react';
+import { Form, Button, Row, Col } from 'react-bootstrap';
+import FormContainer from '../components/FormContainer';
+import Loader from '../components/loader';
+// import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useRegisterMutation } from '../slices/usersApiSlice';
+import { setCredentials } from '../slices/authSlice';
+import { toast } from 'react-toastify';
 
-const SignupSender = () => {
-    return (
-     //just added header component first before writing the form 
-        <div className='min-h-full h-screen  justify-center py-12 px-4 sm:px-6 lg:px-8'>
-          
-          <AuthHeader
-          heading="Get started! "
-          paragraph="Already have an account ?"
-          linkName=" login "
-          linkUrl="/login"
-          />
-      <div className=' lg:w-1/2 justify-center items-center bg-white form-container '>
-      <div className='w-full px-8 md:px-32 lg:px-24  '>
-      <form className=' rounded-md shadow-2xl p-10  '>
-      <div class="form-group">
-                <label for="profile">I am a: </label>
-                      <select name="profile" id="profile">
-                        <option value="Sender">Sender</option>
-                        <option value="Driver">Driver</option>
-                        <option value="Admin">Admin</option>
-                        </select>                 
-        </div>
-        <br />
-      <div className="justify-center">
-          {signupFields.map(field =>(
-          
-              <div key={field.id} className="block text-gray-700 text-sm font-bold ">
-                 <label className='relative text-sm text-gray-500 dark:text-gray-400 
-                    duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0]
-                    left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 
-                    peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
-                    peer-focus:scale-75 peer-focus:-translate-y-4'> </label>     
-                  <input 
-                  className='text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 
-                  text-base transition duration-500 ease-in-out transform border-transparent 
-                  rounded-lg bg-gray-100 focus:border-blueGray-500 focus:bg-white
-                  dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 
-                  ring-offset-current ring-offset-2 ring-gray-400'
-                  id={field.id}
-                  type={field.type} 
-                  name={field.name} 
-                  placeholder={field.placeholder}
-                   />
-  
-              </div>
-  
-          ))}
-          <br />
-          <div>
-              <button type="submit" className="bg-purple-500 flex w-full justify-center rounded-md 
-               px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline 
-               focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                          Sign up 
-              </button>
-          </div>
-  
-  
-          </div>
-      </form>
-      </div>
-      </div>
-      </div>        
-  
-    );
-  }
-  
-  
-export default SignupSender;
+const Signup = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [profile, setProfile] = useState('');
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [register, { isLoading }] = useRegisterMutation();
+
+  const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate('/');
+    }
+  }, [navigate, userInfo]);
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+
+    if (password !== confirmPassword) {
+      toast.error('Passwords do not match');
+    } else {
+      try {
+        const res = await register({ name, email, password }).unwrap();
+        dispatch(setCredentials({ ...res }));
+        navigate('/');
+      } catch (err) {
+        toast.error(err?.data?.message || err.error);
+      }
+    }
+  };
+  return (
+    <FormContainer>
+      <h1>Register</h1>
+      <Form onSubmit={submitHandler}>
+      
+      <Form.Group className='my-2' controlId='profile'>
+          <Form.Label>Profile</Form.Label>
+          <Form.Select
+            type='profile'
+            value={profile}
+            onChange={(values) => this.setProfile(values)}
+          >
+            <option>Sender</option>
+            <option>Driver</option>
+            <option>Admin</option>
+          </Form.Select>
+        </Form.Group>
+
+        <Form.Group className='my-2' controlId='name'>
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type='name'
+            placeholder='Enter name'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+
+        <Form.Group className='my-2' controlId='email'>
+          <Form.Label>Email Address</Form.Label>
+          <Form.Control
+            type='email'
+            placeholder='Enter email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+
+        <Form.Group className='my-2' controlId='password'>
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type='password'
+            placeholder='Enter password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group className='my-2' controlId='confirmPassword'>
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control
+            type='password'
+            placeholder='Confirm password'
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+
+        <Button type='submit' variant='primary' className='mt-3'>
+          Register
+        </Button>
+
+        {isLoading && <Loader />}
+      </Form>
+
+      <Row className='py-3'>
+        <Col>
+          Already have an account? <Link to={`/login`}>Login</Link>
+        </Col>
+      </Row>
+    </FormContainer>
+  );
+};
+
+export default Signup;

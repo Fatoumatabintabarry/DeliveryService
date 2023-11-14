@@ -4,7 +4,7 @@ import Home from "./Pages/home";
 import WhyShiped from "./Pages/whyshiped";
 import DeliverySolutions from "./Pages/deliverysolutions";
 import Login from "./Pages/login";
-import Signup from "./Pages/Signup";
+import Signup from "./Pages/Signup.jsx";
 import ChoicePage from "./Pages/choicePage";
 import RequestDelivery from "./Pages/RequestDelivery";
 import DriverPortal from "./Pages/DriverPortal";
