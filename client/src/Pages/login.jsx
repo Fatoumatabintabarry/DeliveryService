@@ -22,8 +22,8 @@ const login = () => {
             <div class="form-group">
                 <label for="profile">I am a: </label>
                       <select name="profile" id="profile">
-                        <option value="Sender">Job Seeker</option>
-                        <option value="Driver">Employer</option>
+                        <option value="Sender">Sender</option>
+                        <option value="Driver">Driver</option>
                         <option value="Admin">Admin</option>
                         </select>                 
             </div>

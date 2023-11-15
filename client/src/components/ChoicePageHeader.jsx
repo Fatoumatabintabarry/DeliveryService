@@ -15,7 +15,8 @@ export default function ChoicePageHeader(
     
     {
       return (
-        <div className="mb-10">
+        <div className="">
+            {/*
                 <div className="flex justify-center">
                 <a href="/">
                     <img
@@ -25,7 +26,7 @@ export default function ChoicePageHeader(
                     />
                 </a>
                 </div>
-                
+             */}
                 <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
                     {heading}
                 </h1>

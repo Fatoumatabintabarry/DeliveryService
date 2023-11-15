@@ -20,4 +20,5 @@ Team:
 Louis-Charles Marquis - 40177137 <br/>
 Fatoumata Binta Barry - 40213443 <br/>
 Omar Mohammad - 40162541 <br/>
+Altamash Sheikh - 40212568 <br/>
 Philip Frattolillo - 40192245
