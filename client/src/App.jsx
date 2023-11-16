@@ -9,6 +9,7 @@ import ChoicePage from "./Pages/choicePage";
 import RequestDelivery from "./Pages/RequestDelivery";
 import DriverPortal from "./Pages/DriverPortal";
 import DriverRides from "./Pages/DriverRides";
+import Feedback from "./Pages/Feedback";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
           <Route path="/choicePage" element={<ChoicePage />} />
           <Route path="/driver-portal" element={<DriverPortal />} />
           <Route path="/driver-rides" element={<DriverRides />} />
+          <Route path="/Feedback" element={<Feedback />} />
+          
           
           {/* ... other routes */}
         </Routes>

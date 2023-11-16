@@ -58,10 +58,13 @@ const DriverRides = () => {
                 <p>Payout: {order.payout}</p>
                 <button
                   onClick={() => acceptDelivery(order.id)}
-                  className="bg-[#5F54E3] hover:bg-[#4e43cc] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-3 transition duration-300"
+                  className="bg-[#F4F5FA] px-4 py-3 rounded-full border border-[#F0F0F6] shadow-xl mt-4"
                 >
                   Accept Delivery
                 </button>
+
+     
+
               </div>
             ))}
           </div>

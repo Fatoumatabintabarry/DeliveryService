@@ -1,11 +1,17 @@
 import React from 'react';
-// Import images if they are local
-import { box, volant, fleche,  } from '../assets'
+import { useNavigate } from 'react-router-dom';
 
 const CommunicationForm = () => {
+  const navigate = useNavigate();
+
+  // Define a function to handle the navigation
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submit action
+    navigate('/Feedback'); // Use the navigate function to redirect
+  };
+
+  
   return (
-    
-    
 
       <div className="flex items-center justify-center p-12" id="contact-us-section ">
         
@@ -82,6 +88,7 @@ const CommunicationForm = () => {
             </div>
             <div>
                 <button
+                onClick={handleSubmit}
                 class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none"
                 >
                 Submit
