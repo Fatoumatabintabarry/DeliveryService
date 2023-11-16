@@ -2,9 +2,9 @@
 //install concurrently: runs the front end and the back end in one command
 import express from 'express';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+//import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
-dotenv.config();
+//dotenv.config();
 //import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
