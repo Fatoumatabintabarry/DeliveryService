@@ -10,6 +10,7 @@ import RequestDelivery from "./Pages/RequestDelivery";
 import DriverPortal from "./Pages/DriverPortal";
 import DriverRides from "./Pages/DriverRides";
 import Feedback from "./Pages/Feedback";
+import Deliveries from "./Pages/deliveries"
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
           <Route path="/driver-portal" element={<DriverPortal />} />
           <Route path="/driver-rides" element={<DriverRides />} />
           <Route path="/Feedback" element={<Feedback />} />
-          
+          <Route path="/deliveries" element={<Deliveries />} />
           
           {/* ... other routes */}
         </Routes>
