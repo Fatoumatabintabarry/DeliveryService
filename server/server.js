@@ -1,29 +1,18 @@
-//install nodemon: keeps the backend server running
-//install concurrently: runs the front end and the back end in one command
 import express from "express";
 import mongoose from "mongoose";
-//import dotenv from 'dotenv';
 import cookieParser from "cookie-parser";
-//dotenv.config();
-//import productRoutes from './routes/productRoutes.js';
 import userRoutes from "./routes/userRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
-
-mongoose
-  .connect("mongodb://127.0.0.1:27017/delivery", { useNewUrlParser: true })
-  .then(() => {
-    console.log("db connected");
-  })
-  .catch((err) => {
-    console.log("error: db failed connection");
-    console.log(err);
-  });
-
+import connectDB from "./config/db.js";
 import bodyParser from "body-parser"; // Import body-parser as ES module
 import products from "./data/products.js";
+import cors from "cors";
+
+connectDB();
 
 const app = express();
-const port = 3000; // You should use only one port unless you have a good reason to use two.
+app.use(cors());
+const port = 3000;
 
 app.use(bodyParser.json());
 
@@ -32,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //app.use('/api/products', itemRoutes);
-app.use("/api/users", userRoutes);
+app.use("/api", userRoutes);
 app.use("/api/orders", orderRoutes);
 
 app.get("/", (req, res) => {

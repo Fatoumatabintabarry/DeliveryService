@@ -60,21 +60,20 @@ const login = () => {
                     peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
                     peer-focus:scale-75 peer-focus:-translate-y-4"
                   ></label>
-                  {loginFields.map((field) => (
-                    <input
-                      className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 
+
+                  <input
+                    className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 
                       text-base transition duration-500 ease-in-out transform border-transparent 
                       rounded-lg bg-gray-100 focus:border-blueGray-500 focus:bg-white
                       dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 
                       ring-offset-current ring-offset-2 ring-gray-400"
-                      id={field.id}
-                      type={field.type}
-                      name={field.name}
-                      placeholder={field.placeholder}
-                      onChange={handleChange}
-                      value={loginData[field.name]}
-                    />
-                  ))}
+                    id={field.id}
+                    type={field.type}
+                    name={field.name}
+                    placeholder={field.placeholder}
+                    onChange={handleChange}
+                    value={loginData[field.name]}
+                  />
                 </div>
               ))}
               <br />

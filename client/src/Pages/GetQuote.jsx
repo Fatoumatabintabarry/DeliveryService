@@ -121,7 +121,7 @@ function GetQuote() {
       {ourdata && (
         <div>
           <h3>Get your delivery quote</h3>
-          <h4>Your delivery estimate is $ ${Price}</h4>
+          <h4>Your delivery estimate is ${Price}</h4>
         </div>
       )}
     </div>
