@@ -37,10 +37,10 @@ const home = () => {
           <Hero />
          </div>
         </div>
-        <div className={`bg-primary ${styles.flexStart} bg-white `}>
+        <div className={` ${styles.flexStart} `}>
           <div className={`${styles.boxWidth}`}>
           <CreateReview onReviewSubmit={handleReviewSubmit} />
-          <DisplayReviews reviews={reviews} />
+          <DisplayReviews reviews={reviews}  />
           
          </div>
         </div>
