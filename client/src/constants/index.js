@@ -3,21 +3,18 @@ import {  linkedin  } from "../assets";
 export const navLinks = [
   {
     id: "/",
-    title: "home",
+    title:"home",
   },
-  {
-    id: "/deliverysolutions",
-    title: "Request Delivery",
-  },
+
   {
     id: "/whyshiped",
-    title: "Support",
+    title:"Support",
   },
  
   
   {
     id: "/login",
-    title: "login",
+    title:"login",
   },
   {
     id:"",
@@ -28,6 +25,10 @@ export const navLinks = [
 
 
 
+/*  {
+    id: "/deliverysolutions",
+    title: "Request Delivery",
+  },*/ 
 
 export const stats = [
   {
