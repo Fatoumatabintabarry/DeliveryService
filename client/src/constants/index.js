@@ -5,10 +5,7 @@ export const navLinks = [
     id: "/",
     title: "home",
   },
-  {
-    id: "/deliverysolutions",
-    title: "Request Delivery",
-  },
+ 
   {
     id: "/whyshiped",
     title: "Support",
@@ -31,8 +28,11 @@ export const navLinks = [
 
 ];
 
-
-
+/*
+{
+  id: "/deliverysolutions",
+  title: "Request Delivery",
+},*/
 
 export const stats = [
   {
