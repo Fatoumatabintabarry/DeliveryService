@@ -23,6 +23,11 @@ export const navLinks = [
     id:"",
     title:"",
   }
+  ,
+  {
+    id: "/deliveries",
+    title: "Deliveries"
+  }
 
 ];
 
