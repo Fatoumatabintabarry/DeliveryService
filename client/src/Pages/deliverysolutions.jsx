@@ -5,7 +5,6 @@ import '../index.css'
 import {Navbar,Footer} from '../components/index';
 import RequestDelivery from './RequestDelivery';
 import MyDeliveries from '../components/MyDeliveries';
-import GetEstimate from '../components/GetEstimate';
 
 const deliverysolutions = () => {
   return (
@@ -15,22 +14,18 @@ const deliverysolutions = () => {
           <Navbar />
           </div>
        </div>
-      
-       <div className={`${styles.paddingX} ${styles.flexStart} bg-[#F1F2F7]`}>
-        <div className={`${styles.boxWidth} `}>
-      
-          <GetEstimate />
-        </div>
-      </div>
 
        <div className={`${styles.paddingX} ${styles.flexStart} bg-[#F1F2F7]`}>
         <div className={`${styles.boxWidth} `}>
-      
           <RequestDelivery />
         </div>
       </div>
 
-      
+      <div className={`${styles.paddingX} ${styles.flexStart} bg-[#F1F2F7]`}>
+        <div className={`${styles.boxWidth} `}>
+          <MyDeliveries />
+        </div>
+      </div>
 
 
     
