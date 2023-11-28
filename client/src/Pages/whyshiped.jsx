@@ -6,9 +6,12 @@ import {Navbar,Testimonial, Footer} from '../components/index';
 import CommunicationForm from '../components/CommunicationForm';
 import Aboutus from '../components/Aboutus';
 import ChoicePageHeader from '../components/ChoicePageHeader';
+import DisplayReviews from '../components/DisplayReviews';
 
 
 const whyshiped = () => {
+   // Assuming reviews are fetched or managed globally
+   const reviews = []; // This should be replaced with actual state management logic
   return (
     
     <div className="  w-full overflow-hidden ">
@@ -24,7 +27,12 @@ const whyshiped = () => {
          </div>
         </div>
 
-    
+       {/* Add DisplayReviews where you want it to appear */}
+          <div className={`${styles.paddingX} ${styles.flexCenter} bg-white`}>
+        <div className={`${styles.boxWidth}`}>
+          <DisplayReviews reviews={reviews} />
+        </div>
+      </div>
       
       
 
