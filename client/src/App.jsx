@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./index.css";
+import './index.css'
 import Home from "./Pages/home";
 import WhyShiped from "./Pages/whyshiped";
 import DeliverySolutions from "./Pages/deliverysolutions";
@@ -10,7 +10,6 @@ import RequestDelivery from "./Pages/RequestDelivery";
 import DriverPortal from "./Pages/DriverPortal";
 import DriverRides from "./Pages/DriverRides";
 import Feedback from "./Pages/Feedback";
-import Deliveries from "./Pages/deliveries";
 
 function App() {
   return (
@@ -22,13 +21,13 @@ function App() {
           <Route path="/deliverysolutions" element={<DeliverySolutions />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
-          {/* <Route path="/RequestDelivery" element={<RequestDelivery />} /> */}
-          {/* <Route path="/choicePage" element={<ChoicePage />} /> */}
+          <Route path="/RequestDelivery" element={<RequestDelivery />} />
+          <Route path="/choicePage" element={<ChoicePage />} />
           <Route path="/driver-portal" element={<DriverPortal />} />
           <Route path="/driver-rides" element={<DriverRides />} />
           <Route path="/Feedback" element={<Feedback />} />
-          <Route path="/deliveries" element={<Deliveries />} />
-
+          
+          
           {/* ... other routes */}
         </Routes>
         {/* other components like Footer */}
