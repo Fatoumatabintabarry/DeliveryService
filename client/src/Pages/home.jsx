@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
 import styles from '../style'
 import '../index.css'
 import GetEstimate from '../components/GetEstimate'
@@ -11,13 +12,50 @@ import CreateReview from '../components/CreateReview';
 import DisplayReviews from '../components/DisplayReviews';
 
 const home = () => {
-// ths use state is meant e to store reviews ! 
-    const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
-    // Function to handle review submission
-    const handleReviewSubmit = (newReview) => {
-      setReviews([...reviews, newReview]);
-    };
+  // Function to fetch reviews from the database
+  const fetchReviews = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/api/reviews');
+      if (response.ok) {
+        const data = await response.json();
+        setReviews(data);
+      } else {
+        console.error('Failed to fetch reviews');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  // Use useEffect to fetch reviews when the component mounts
+  useEffect(() => {
+    fetchReviews();
+  }, []);
+
+  // Function to handle review submission
+  const handleReviewSubmit = async (newReview) => {
+    try {
+      const response = await fetch('http://localhost:3000/api/reviews', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newReview)
+      });
+      if (response.ok) {
+        // Fetch all reviews again to refresh the list
+        fetchReviews();
+      } else {
+        console.error('Failed to submit review');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+
     
     return(
 
@@ -37,6 +75,7 @@ const home = () => {
           <Hero />
          </div>
         </div>
+
         <div className={` ${styles.flexStart} `}>
           <div className={`${styles.boxWidth}`}>
           <CreateReview onReviewSubmit={handleReviewSubmit} />

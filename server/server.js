@@ -7,6 +7,8 @@ import connectDB from "./config/db.js";
 import bodyParser from "body-parser"; // Import body-parser as ES module
 import products from "./data/products.js";
 import cors from "cors";
+import reviewRoutes from './routes/reviewRoutes.js'; // Adjust the path as necessary
+
 
 connectDB();
 
@@ -58,6 +60,9 @@ app.post("/api/quote", (req, res) => {
     message: "Form Submitted",
   });
 });
+
+// route for review 
+app.use('/api/reviews', reviewRoutes);
 
 // Listen on the same port as declared above, remove the second listen statement.
 app.listen(port, () => console.log(`Server is running on port ${port}`));
