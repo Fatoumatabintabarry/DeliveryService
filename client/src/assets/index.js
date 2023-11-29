@@ -14,7 +14,7 @@ import logoBlack from "./logoBlack.png"
 import fleche from './fleche.png'
 import volant from './volant.png'
 import simple from './simple.png'
-
+import anime from './anime.jpg'
 export {
 
 
@@ -29,4 +29,5 @@ export {
   fleche,
   volant,
   simple,
+  anime,
 };
