@@ -1,5 +1,5 @@
 import React from 'react';
-import { anime } from '../assets';
+import { group } from '../assets';
 
 const Features = () => {
   return (
@@ -73,7 +73,7 @@ const Features = () => {
             </div>
 
             <div className="hidden lg:flex lg:items-center lg:w-1/2 lg:justify-center">
-              <img className="w-[28rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem] rounded-full" src={anime} alt="Feature Presentation" />
+              <img className="w-[28rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem] rounded-full" src={group} alt="Feature Presentation" />
             </div>
           </div>
 

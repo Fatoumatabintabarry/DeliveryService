@@ -22,18 +22,17 @@ const whyshiped = () => {
       </div>
 
       <div className={`${styles.paddingX} ${styles.flexCenter} `}>
-          <div className={`${styles.boxWidth}`}>
+          
           <Aboutus />
-         </div>
+        
         </div>
 
-       {/* Add DisplayReviews where you want it to appear */}
-          <div className={`${styles.paddingX} ${styles.flexCenter} bg-white`}>
+      {/* Add DisplayReviews where you want it to appear */}
+       <div className={`${styles.paddingX} ${styles.flexCenter} bg-white`}>
         <div className={`${styles.boxWidth}`}>
           <DisplayReviews reviews={reviews} />
         </div>
       </div>
-      
       
 
 
@@ -49,13 +48,11 @@ const whyshiped = () => {
          </div>
         </div>
 
-       {/*3rd div is the testimonial section section */}
-       <div className={`bg-primary ${styles.flexStart} bg-white `}>
-          <div className={`${styles.boxWidth}`}>
-          <Testimonial />
-         </div>
-        </div>
 
+
+        
+  
+    
      
 
        {/*4th div is for all different sections  */}

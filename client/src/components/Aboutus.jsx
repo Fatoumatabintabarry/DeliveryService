@@ -1,47 +1,77 @@
 import React from "react";
-const links = [
-    { name: 'Contact us', href: '#contact-us-section' },
-    { name: 'Reviews', href: '#reviews-section' },
-  ];
-  
+import { anime } from "../assets";
+
 
   
   
   export default function Aboutus() {
     return (
-      <div className=" login-background relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-        
-        <div
-          className="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
-          aria-hidden="true"
-        >
-          <div
-            className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-          />
+
+
+
+  <section class="mb-20 text-center md:text-left  my-24 mx-auto md:px-6">
+    <div
+      class=" ">
+      <div class="flex flex-wrap items-center">
+        <div class="block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-3/12 xl:w-4/12">
+          <img src={anime} alt="Trendy Pants and Shoes"
+            class="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" />
         </div>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Simple. Easy.</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
-            Spend less time shipping and more time on the things that matter to you - like growth!
+        <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
+          <div class="px-6 py-12 md:px-12">
+            <h2 class="mb-6 pb-2 text-3xl font-bold">
+            Simple. Easy
+            </h2>
+            <p class="mb-6 pb-2 text-neutral-500 dark:text-neutral-300">
+            Spend less time shipping and more time on the things that matter to you 
             </p>
-          </div>
-          <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-              {links.map((link) => (
-                <a key={link.name} href={link.href}>
-                  {link.name} <span aria-hidden="true">&rarr;</span>
-                </a>
-              ))}
+          
+
+
+            <div class="mb-6 flex flex-wrap">
+              <div class="mb-4 w-full md:w-4/12">
+                <p class="flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="mr-3 h-5 w-5 text-neutral-900 dark:text-neutral-50">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Save Time on Errands
+                </p>
+              </div>
+              <div class="mb-4 w-full md:w-4/12">
+                <p class="flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="mr-3 h-5 w-5 text-neutral-900 dark:text-neutral-50">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Send Oversized Items For Less
+                </p>
+              </div>
+              <div class="mb-4 w-full md:w-4/12">
+                <p class="flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="mr-3 h-5 w-5 text-neutral-900 dark:text-neutral-50">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Enjoy Peace of Mind
+                </p>
+              </div>
+              
+              
+             
             </div>
-            
+
+            <a href="#contact-us-section" className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 
+   dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+  Need help?
+</a>
+
+
+
           </div>
         </div>
       </div>
-    )
+    </div>
+  </section>
+
+
+       )
   }
   
