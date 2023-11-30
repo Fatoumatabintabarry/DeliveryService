@@ -5,14 +5,14 @@ import { footerLinks } from '../constants';
 
 const Footer = () => {
   return (
-    <section className={`${styles.flexCenter} ${styles.paddingY} flex-col bg-[#5F54E3] mt-6 pt-6`}>
+    <section className={`${styles.flexCenter} ${styles.paddingY} flex-col bg-[#5F54E3] `}>
       <div className={`${styles.flexStart} md:flex-row flex-col mb-6 w-full`}>
         
         <div>
           <img src={logoWhite} alt="logo" className='w-[266px] h-[72px] object-contain' />
         </div>
 
-        <div className='flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10'>
+        <div className='flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 '>
           {footerLinks.map((footerLink, footerLinkIndex) => (
             <div key={`footerLink-${footerLinkIndex}`} className='flex flex-col ss:my-0 my-4 min-w-[150px]'>
               

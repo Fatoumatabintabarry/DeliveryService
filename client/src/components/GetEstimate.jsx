@@ -60,13 +60,14 @@ const GetEstimate = () => {
     console.log("Clicked");
   }
   return (
-    <div className="flex justify-center items-center form-container ">
-      <div className="w-full px-4 md:px-32 lg:px-24">
+    <div className="flex justify-center items-center form-container " >
+      <div className="w-full px-4 md:px-32 lg:px-24 " >
         <form
+         
           onSubmit={handleForm}
           className="bg-white rounded-lg shadow-xl p-8 mt-10 md:mt-0 border-indigo-600 "
         >
-          <h4 className="text-2xl md:text-3xl font-bold text-center mb-6">
+          <h4 className="text-2xl md:text-3xl font-bold text-center mb-6"  id='GetEstimate'>
            Get an estimate 
 
 
@@ -125,13 +126,15 @@ const GetEstimate = () => {
             <div className="col-span-1 lg:col-span-1 ml-6">
               <button
                 type="submit"
-                className="form-button-3 w-full p-2 border border-transparent
-                    bg-purple-600 text-white rounded hover:bg-purple-700 focus:outline-none focus:ring-2
-                      focus:ring-purple-500 focus:ring-opacity-50"
+                className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 
+                dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                 value="Submit"
               >
                 Get Estimate
               </button>
+
+            
+
             </div>
 
             {
@@ -159,6 +162,12 @@ const GetEstimate = () => {
                 1 0 010-1.414z" clipRule="evenodd"></path>
                 </svg>
             </a>
+
+
+
+
+
+            
   
               </div>
             )

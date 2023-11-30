@@ -4,10 +4,13 @@ export default class RequestDelivery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      addressReceiver: "4020 Linz",
+      addressReceiver: "address of receiver 4020 Linz",
       newAddressReceiver: "",
-      addressSender: "1000 Vienna",
+      addressSender: " adress of sender 1000 Vienna",
       newAddressSender: "",
+      TotalCost: " 20 $",
+      newTotalCost: "",
+
       deliveryInfo: {
         sName: "",
         sAddress: "",
@@ -197,12 +200,13 @@ export default class RequestDelivery extends React.Component {
               </div>
             </div>
             <div class="flex-none pt-2.5 pr-2.5 pl-1"></div>
+
             <div className="px-5 pb-5">
               
               <input
                 onChange={this.readTextBoxAddressReceiver}
                 id="receiverAddy"
-                placeholder="Address"
+                placeholder="Cost"
                 className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
               />
 
@@ -210,11 +214,14 @@ export default class RequestDelivery extends React.Component {
             </div>
       
             
+      
 
-            <hr className="mt-4" />
+        
+        
+        
+        
+         <hr className="mt-4" />
           
-          
-              
               
           {/* Pre-filled Addresses */}
           <div className="mt-5 bg-white shadow cursor-pointer rounded-xl">
@@ -273,8 +280,44 @@ export default class RequestDelivery extends React.Component {
               </button>
             </div>
             
-          </div>
+            
 
+
+
+          </div>
+          <div className="flex rounded-lg shadow mt-6  ">
+            
+              {/* Address details */}
+              <div class="flex-1 py-5 pl-5 overflow-hidden">
+                <ul>
+                  <li class="text-xs text-gray-600 uppercase ">Receiver</li>
+                  <li>{this.state.addressReceiver}</li>
+                </ul>
+              </div>
+
+              <div class="flex-1 py-5 pl-1 overflow-hidden">
+                <ul>
+                  <li class="text-xs text-gray-600 uppercase">Ship from</li>
+                  <li>{this.state.addressSender}</li>
+                </ul>
+              </div>
+              <div class="flex-1 py-5 pl-1 overflow-hidden">
+                <ul>
+                  <li class="text-xs text-gray-600 uppercase">Total cost</li>
+                  <li>{this.state.TotalCost}</li>
+                </ul>
+              </div>
+              <div class="flex-1 py-5 pl-1 overflow-hidden">
+              <a href="#" className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 
+            dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+              Pay 
+            </a>
+            
+          </div>
+              
+
+             
+            </div>
          
 
         </div>

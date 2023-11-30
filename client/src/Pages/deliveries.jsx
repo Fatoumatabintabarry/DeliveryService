@@ -16,6 +16,8 @@ const Deliveries = () => {
 //     },
 //     //body:JSON.stringify(productDetails)
 // }).then
+
+
 const [data, setData] = useState([]);
 useEffect(() => {
 fetch('/api/orders') // Assuming React is served from the same domain as Express

@@ -13,7 +13,7 @@ const CommunicationForm = () => {
   
   return (
 
-      <div className="flex items-center justify-center p-12" id="contact-us-section ">
+      <div className="flex items-center justify-center p-12" id="contact">
         
         <div className="mx-auto w-full max-w-[550px]">
          

@@ -76,6 +76,20 @@ const home = () => {
          </div>
         </div>
 
+        <div className={` ${styles.paddingY} ${styles.flexStart} bg-[#F4F5FA]`}>
+          <div className={`${styles.boxWidth}`}>
+            <GetEstimate />
+          </div>
+         </div>
+
+        {/*3rd div is the hero section */}
+        <div className={`bg-primary ${styles.flexStart}  `}>
+          <div className={`${styles.boxWidth}`}>
+          <Features />
+         </div>
+        </div>
+
+
         <div className={` ${styles.flexStart} `}>
           <div className={`${styles.boxWidth}`}>
           <CreateReview onReviewSubmit={handleReviewSubmit} />
@@ -85,24 +99,14 @@ const home = () => {
         </div>
         
 
-        <div className={` ${styles.paddingY} ${styles.flexStart} bg-[#F4F5FA]`}>
-          <div className={`${styles.boxWidth}`}>
-            <GetEstimate />
-          </div>
-         </div>
-
+       
          <div className={` ${styles.paddingY} ${styles.flexStart} bg-[#F4F5FA]`}>
           <div className={`${styles.boxWidth}`}>
             <DriverPortal />
           </div>
          </div>
          
-          {/*3rd div is the hero section */}
-        <div className={`bg-primary ${styles.flexStart}  `}>
-          <div className={`${styles.boxWidth}`}>
-          <Features />
-         </div>
-        </div>
+ 
 
         /* 
     {/*4th div is for all different sections  */}
