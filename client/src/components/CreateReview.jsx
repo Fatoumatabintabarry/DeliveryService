@@ -81,7 +81,7 @@ function CreateReview ({onReviewSubmit }) {
       </div>
       <div className="bg-gray-200 w-full flex flex-col items-center">
                 <div className="flex flex-col items-center py-6 space-y-3">
-                    <span className="text-lg text-gray-800">How was quality of the call?</span>
+                    <span className="text-lg text-gray-800">How was the service ?</span>
                 {/*This is the row for the starts */}
 
                         <div className="flex space-x-3">

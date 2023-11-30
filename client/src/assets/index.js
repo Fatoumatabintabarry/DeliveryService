@@ -16,6 +16,7 @@ import volant from './volant.png'
 import simple from './simple.png'
 import anime from './anime.jpg'
 import group from './group.jpg'
+
 export {
 
 
@@ -32,4 +33,5 @@ export {
   simple,
   anime,
   group,
+ 
 };

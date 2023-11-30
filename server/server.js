@@ -48,14 +48,13 @@ app.get("/api/quote", (req, res) => {
 
 app.post("/api/quote", (req, res) => {
   console.log(req.body);
-  const { Height, Weight, SAddress, RAddress, Distance } = req.body;
+  const { Height, Weight, SDescription, Distance } = req.body;
   console.log(`Difference between the two addresses is ${Distance}`);
   // Send a response with the form data and a message. Only one response should be sent.
   res.json({
     Height,
     Weight,
-    SAddress,
-    RAddress,
+    SDescription,
     Distance,
     message: "Form Submitted",
   });

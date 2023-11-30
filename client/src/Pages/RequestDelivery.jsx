@@ -4,10 +4,6 @@ export default class RequestDelivery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nameSender: "Rick Astley",
-      newNameSender: "",
-      nameReceiver: "Max Mustermann",
-      newNameReceiver: "",
       addressReceiver: "4020 Linz",
       newAddressReceiver: "",
       addressSender: "1000 Vienna",
@@ -22,33 +18,23 @@ export default class RequestDelivery extends React.Component {
     };
   }
 
-  readTextBoxNameSender = (userInputNameS) => {
-    this.setState({ newNameSender: userInputNameS.target.value });
-  };
+  
 
   readTextBoxAddressSender = (userInputAddressS) => {
     this.setState({ newAddressSender: userInputAddressS.target.value });
   };
 
-  readTextBoxNameReceiver = (userInputNameR) => {
-    this.setState({ newNameReceiver: userInputNameR.target.value });
-  };
-
+ 
   readTextBoxAddressReceiver = (userInputAddressR) => {
     this.setState({ newAddressReceiver: userInputAddressR.target.value });
   };
 
-  saveNameSender() {
-    this.setState({ nameSender: this.state.newNameSender });
-  }
+
 
   saveAddressSender() {
     this.setState({ addressSender: this.state.newAddressSender });
   }
 
-  saveNameReceiver() {
-    this.setState({ nameReceiver: this.state.newNameReceiver });
-  }
 
   saveAddressReceiver() {
     this.setState({ addressReceiver: this.state.newAddressReceiver });
@@ -58,9 +44,9 @@ export default class RequestDelivery extends React.Component {
     this.setState((prevState) => ({
       deliveryInfo: {
         ...prevState.deliveryInfo,
-        sName: this.state.newNameSender,
+       
         sAddress: this.state.newAddressSender,
-        rName: this.state.newNameReceiver,
+     
         rAddress: this.state.newAddressReceiver,
         price: this.state.price, // Include price in deliveryInfo
       },
@@ -68,17 +54,13 @@ export default class RequestDelivery extends React.Component {
   }
 
   saveInfo() {
-    if (document.getElementById("senderName").value.trim() !== "") {
-      this.saveNameSender();
-    }
+
 
     if (document.getElementById("senderAddy").value.trim() !== "") {
       this.saveAddressSender();
     }
 
-    if (document.getElementById("receiverName").value.trim() !== "") {
-      this.saveNameReceiver();
-    }
+  
 
     if (document.getElementById("receiverAddy").value.trim() !== "") {
       this.saveAddressReceiver();
@@ -143,29 +125,35 @@ export default class RequestDelivery extends React.Component {
                 </svg>
 
                 <h1 className="inline text-2xl font-semibold leading-none">
-                  Sender
+                  Ship From
                 </h1>
               </div>
             </div>
 
             <div className="px-5 pb-5">
-              <input
-                onChange={this.readTextBoxNameSender}
-                id="senderName"
-                placeholder="Name"
-                className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
-              />
+            
               <input
                 onChange={this.readTextBoxAddressSender}
                 id="senderAddy"
                 placeholder="Address"
                 className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
               />
-
-              {/* More inputs and labels */}
+              <div class="flex">
+                  <div class="flex-grow w-1/4 pr-2">
+                 <input  placeholder="Postal code " class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
+                 </div>
+                 <div class="flex-grow w-1/4 pr-2">
+                  <input placeholder="City" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
+                  </div>
+                  <div class="flex-grow w-1/4 pr-2">
+                  <input placeholder="country" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
+                  </div>
+                </div>
             </div>
+
+            
             <div className="flex">
-              <div class="flex-1 py-5 pl-5 overflow-hidden">
+              <div class="flex-1 py-5 pl-5 oPostal codeverflow-hidden">
                 <svg
                   class="inline align-text-top"
                   width="21"
@@ -193,25 +181,59 @@ export default class RequestDelivery extends React.Component {
                   </g>
                 </svg>
                 <h1 class="inline text-2xl font-semibold leading-none">
-                  Receiver
+                  Ship To
                 </h1>
               </div>
             </div>
             <div class="flex-none pt-2.5 pr-2.5 pl-1"></div>
             <div className="px-5 pb-5">
-              <input
-                onChange={this.readTextBoxNameReceiver}
-                id="receiverName"
-                placeholder="Name"
-                className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
-              />
+              
               <input
                 onChange={this.readTextBoxAddressReceiver}
                 id="receiverAddy"
                 placeholder="Address"
                 className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
               />
+
+                 <div class="flex">
+                  <div class="flex-grow w-1/4 pr-2">
+                 <input  placeholder="Postal code " class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
+                 </div>
+                 <div class="flex-grow w-1/4 pr-2">
+                  <input placeholder="City" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
+                  </div>
+                  <div class="flex-grow w-1/4 pr-2">
+                  <input placeholder="country" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
+                  </div>
+                </div>
+
+
+                
+
             </div>
+
+            <div className="flex">
+              <div class="flex-1 py-5 pl-5 oPostal codeverflow-hidden">
+             
+                <h1 class="inline text-2xl font-semibold leading-none">
+                 Total Cost
+                </h1>
+              </div>
+            </div>
+            <div class="flex-none pt-2.5 pr-2.5 pl-1"></div>
+            <div className="px-5 pb-5">
+              
+              <input
+                onChange={this.readTextBoxAddressReceiver}
+                id="receiverAddy"
+                placeholder="Address"
+                className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
+              />
+
+
+            </div>
+      
+            
 
             <hr className="mt-4" />
             <div className="flex flex-row-reverse p-3">
@@ -304,7 +326,7 @@ export default class RequestDelivery extends React.Component {
               </div>
               <div class="flex-1 py-5 pl-1 overflow-hidden">
                 <ul>
-                  <li class="text-xs text-gray-600 uppercase">Sender</li>
+                  <li class="text-xs text-gray-600 uppercase">Ship from</li>
                   <li>{this.state.nameSender}</li>
                   <li>Rickrolled 11</li>
                   <li>{this.state.addressSender}</li>

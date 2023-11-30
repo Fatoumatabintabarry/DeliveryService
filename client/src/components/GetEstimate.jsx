@@ -3,8 +3,8 @@ import "../quotation.css";
 const GetEstimate = () => {
   const [Height, setHeight] = useState("");
   const [Weight, setWeight] = useState("");
-  const [Address1, setAddress1] = useState("");
-  const [Address2, setAddress2] = useState("");
+  const [Description, setDescription] = useState("");
+
   const [Distance, setDistance] = useState("");
   const [Price, setPrice] = useState(0);
   function handleForm(event) {
@@ -12,8 +12,8 @@ const GetEstimate = () => {
     let productDetails = {
       Height: Height,
       Weight: Weight,
-      SAddress: Address1,
-      RAddress: Address2,
+      SDescription: Description,
+   
       Distance: Distance,
     };
     fetch("/api/quote", {
@@ -67,62 +67,62 @@ const GetEstimate = () => {
           className="bg-white rounded-lg shadow-xl p-8 mt-10 md:mt-0 border-indigo-600 "
         >
           <h4 className="text-2xl md:text-3xl font-bold text-center mb-6">
-            Quotation
+           Get an estimate 
+
+
           </h4>
 
-          <div className="grid grid-cols-1 lg:grid-cols-7 gap-4  mb-6">
-            <div className="col-span-1 lg:col-span-1">
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-4  mb-6 ml-12">
+
+          <div className="col-span-1 lg:col-span-1 ">
               <input
                 type="text"
-                name="Height"
-                onChange={(e) => setHeight(e.target.value)}
-                className="form-input w-full p-2 border border-gray-300 rounded"
-                placeholder="Height"
+                name="Description"
+                onChange={(e) => setDescription(e.target.value)}
+                className=" h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans
+                 text-sm font-normal text-blue-gray-700 outline outline-0 transition-all 
+                 placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 
+                 disabled:bg-blue-gray-50"
+                placeholder=" What are you shipping ?"
               />
+
             </div>
 
-            <div className="col-span-1 lg:col-span-1">
-              <input
-                type="text"
-                name="Weight"
-                onChange={(e) => setWeight(e.target.value)}
-                className="form-input w-full p-2 border border-gray-300 rounded"
-                placeholder="Weight"
-              />
-            </div>
+            <div className="col-span-1 lg:col-span-1 flex items-center">
+  <input
+    type="text"
+    name="Height"
+    onChange={(e) => setHeight(e.target.value)}
+    className="h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+    placeholder="Height"
+  />
+  <span className="ml-2 text-sm text-gray-400">cm</span>
+</div>
 
-            <div className="col-span-1 lg:col-span-1">
-              <input
-                type="text"
-                name="Address1"
-                onChange={(e) => setAddress1(e.target.value)}
-                className="form-input w-full p-2 border border-gray-300 rounded"
-                placeholder="Sender's Address"
-              />
-            </div>
+<div className="col-span-1 lg:col-span-1 flex items-center">
+  <input
+    type="text"
+    name="Weight"
+    onChange={(e) => setWeight(e.target.value)}
+    className="h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+    placeholder="Weight"
+  />
+  <span className="ml-2 text-sm text-gray-400">kg</span>
+</div>
 
-            <div className="col-span-1 lg:col-span-1">
-              <input
-                type="text"
-                name="Address2"
-                onChange={(e) => setAddress2(e.target.value)}
-                className="form-input w-full p-2 border border-gray-300 rounded"
-                placeholder="Receiver's address"
-              />
-            </div>
+<div className="col-span-1 lg:col-span-1 flex items-center">
+  <input
+    type="text"
+    name="Distance"
+    onChange={(e) => setDistance(e.target.value)}
+    className="h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+    placeholder="Distance between the source and destination"
+  />
+  <span className="ml-2 text-sm text-gray-400">km</span>
+</div>
 
-            <div className="col-span-1 lg:col-span-1">
-              <input
-                type="text"
-                name="Distance"
-                onChange={(e) => setDistance(e.target.value)}
-                className="form-input w-full p-2 border border-gray-300 rounded"
-                placeholder="Distance between the source and destination"
-              />
-              <br />
-            </div>
 
-            <div className="col-span-1 lg:col-span-1">
+            <div className="col-span-1 lg:col-span-1 ml-6">
               <button
                 type="submit"
                 className="form-button-3 w-full p-2 border border-transparent
@@ -134,14 +134,41 @@ const GetEstimate = () => {
               </button>
             </div>
 
-            <div>
-              <h4 className="form-input w-full p-2 border border-gray-300 rounded">
-                {" "}
-                Your delivery estimate is ${Price}
-              </h4>
-            </div>
+            {
+            Price !== 0 && (
+              <div>
+                <h4>
+                  Your delivery estimate is ${Price}
+                </h4>
+  
+              </div>
+            )
+          }
           </div>
+         
+          {
+            Price !== 0 && (
+              <div className="flex justify-center items-center ">
+                 <a href="#" className="inline-flex items-center justify-center px-5 py-3 mr-3 
+                      text-base font-medium text-center rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 
+                    focus:ring-primary-300 dark:focus:ring-primary-900">
+                      Request a delivery
+                <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" 
+                xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0
+                011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 
+                1 0 010-1.414z" clipRule="evenodd"></path>
+                </svg>
+            </a>
+  
+              </div>
+            )
+          }
+        
+        
         </form>
+
+        
+        
       </div>
     </div>
   );

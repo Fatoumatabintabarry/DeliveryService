@@ -27,13 +27,7 @@ const whyshiped = () => {
         
         </div>
 
-      {/* Add DisplayReviews where you want it to appear */}
-       <div className={`${styles.paddingX} ${styles.flexCenter} bg-white`}>
-        <div className={`${styles.boxWidth}`}>
-          <DisplayReviews reviews={reviews} />
-        </div>
-      </div>
-      
+   
 
 
       <div className={`${styles.paddingX} ${styles.flexCenter} bg-[#F1F2F7] `}>
