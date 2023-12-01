@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import '../index.css'
 
 function CreateReview ({onReviewSubmit }) {
     const [clicked, setClicked] = useState(false);
@@ -72,7 +73,7 @@ function CreateReview ({onReviewSubmit }) {
   
   return (
  
-<div className="min-h-screen bg-gray-300 py-6 flex flex-col justify-center sm:py-12">
+<div className=" bg-blue-gradient min-h-screen  py-6 flex flex-col justify-center sm:py-12 ">
   <div className="py-3 sm:max-w-xl sm:mx-auto">
     
     <div className="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg">

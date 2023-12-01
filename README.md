@@ -1,19 +1,24 @@
 # DeliveryService
 
 The project is about a software system for delivery service.
+The core features of the "Delivery" service include: 
+1.	Request for delivery (details of pick up and drop of)
+2.	Proposal of a quotation for the service
+3.	Communication about the service
+4.	Tracking the order
+5.	Payment
+6.	Review of service 
 
-Run the frond end only:
+Run the Backend first:
 
-- cd to client
-- run "npm start" in the terminal
+-cd server  --> enter
+- node server --> enter
 
-Run the backend only:
+Then run the front end with:
 
--run "npm run server" in the root directory
+- cd client  --> enter
+- npm run dev in terminal --> enter
 
-Run the frontend and the backend:
-
--run "npm run dev" in the root directory
 
 Team:
 

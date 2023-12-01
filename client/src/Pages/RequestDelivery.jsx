@@ -28,8 +28,7 @@ export default class RequestDelivery extends React.Component {
   }
 
   readTextBoxAddressSender = (userInputAddressS) => {
-    this.setState({ addressSender: userInputAddressS.target.value });
-    // this.setState({ newAddressSender: userInputAddressS.target.value });
+    this.setState({ newAddressSender: userInputAddressS.target.value });
   };
 
   readTextBoxAddressReceiver = (userInputAddressR) => {
@@ -37,9 +36,19 @@ export default class RequestDelivery extends React.Component {
     // this.setState({ newAddressReceiver: userInputAddressR.target.value });
   };
 
-  saveAddressSender() {
-    this.setState({ addressSender: this.state.newAddressSender });
-  }
+  readTextBoxTotalCost = (userInputCost) => {
+    let cost = Number(userInputCost.target.value).toFixed(2);
+    this.setState({ cost: cost });
+    let tax = Number(cost * 0.15).toFixed(2);
+    this.setState({ tax: tax });
+    let totalCost = (+cost + +tax).toFixed(2);
+    this.setState({ totalCost: totalCost });
+    // this.setState({ newAddressSender: userInputAddressS.target.value });
+  };
+
+  // saveAddressSender() {
+  //   this.setState({ addressSender: this.state.newAddressSender });
+  // }
 
   // saveAddressReceiver() {
   //   this.setState({ addressReceiver: this.state.newAddressReceiver });
@@ -244,7 +253,7 @@ export default class RequestDelivery extends React.Component {
                 type="button"
                 className="relative w-full flex 
                   justify-center items-center px-5 py-2.5 font-medium tracking-wide text-white 
-                  capitalize bg-[#5F54E3] rounded-md hover:bg-gray-900 focus:outline-none transition 
+                  capitalize bg-[#a15ce6] rounded-md hover:bg-gray-900 focus:outline-none transition 
                   duration-300 transform active:scale-95 ease-in-out"
               >
                 {/* SVG */}
@@ -264,7 +273,7 @@ export default class RequestDelivery extends React.Component {
                 </svg>
                 <button
                   onClick={this.submitForm}
-                  className="pl-2 mx-1 bg-[#5F54E3]"
+                  className="pl-2 mx-1 bg-[#a15ce6]"
                 >
                   Request a delivery
                 </button>

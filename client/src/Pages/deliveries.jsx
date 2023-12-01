@@ -47,22 +47,11 @@ fetch('/api/orders') // Assuming React is served from the same domain as Express
                 className="bg-white my-4 p-4 rounded-lg shadow-lg"
               >
                 <h2 className="text-xl font-semibold">Order ID: {order._id}</h2>
-                <p>Address: {order.shippingAddress.address + ', ' + 
-                             order.shippingAddress.city + ', ' + 
-                             order.shippingAddress.postalCode}</p>
-                <div>
-                    Item(s): {order.orderItems.map((item) => (
-                        <div key={item._id} style={{textIndent: '20px', paddingBottom: '8px'}}>
-                            <p>Name: {item.name}</p>
-                            <p>Quantity: {item.qty}</p>
-                            <p>Price: {item.price}</p>
-                        </div>
-                        
-                    ))}
-                </div>
+                <p>From: {order.shippingAddress.sAddress}</p>
+                <p>To: {order.shippingAddress.rAddress}</p>
                 <p>Payment Method: {order.paymentMethod}</p>
-                <p>Shipping Cost: {order.shippingCost}</p>
-                <p>Total Price: {order.totalPrice}</p>
+                <p>Total Price: {order.totalCost}</p>
+                <p>Status: {order.status}</p>
               </div>
             ))}
           </div>

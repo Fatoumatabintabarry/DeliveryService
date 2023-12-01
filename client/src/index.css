@@ -45,13 +45,26 @@
 .bg-blue-gradient {
   background: linear-gradient(
     157.81deg,
-    #def9fa -43.27%,
-    #bef3f5 -21.24%,
-    #9dedf0 12.19%,
-    #7de7eb 29.82%,
-    #5ce1e6 51.94%,
-    #33bbcf 90.29%
+    #ecdefa -43.27%,
+    #dabef5 -21.24%,
+    #c69df0 12.19%,
+    #b47deb 29.82%,
+    #a15ce6 51.94%,
+    #5F54E3 90.29%
   );
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .bg-black-gradient {
