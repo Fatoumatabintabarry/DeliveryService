@@ -4,82 +4,99 @@ export default class RequestDelivery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      addressReceiver: "address of receiver 4020 Linz",
-      newAddressReceiver: "",
-      addressSender: " adress of sender 1000 Vienna",
-      newAddressSender: "",
-      TotalCost: " 20 $",
-      newTotalCost: "",
+      addressReceiver: "",
+      // newAddressReceiver: "",
+      addressSender: "",
+      // newAddressSender: "",
+      cost: 0.00,
+      tax: 0.00,
+      totalCost: 0.00,
 
-      deliveryInfo: {
-        sName: "",
-        sAddress: "",
-        rName: "",
-        rAddress: "",
-      },
-      price: 0, // Added for storing the calculated price
+      // newTotalCost: "",
+
+      // deliveryInfo: {
+      //   // sName: "",
+      //   sAddress: "",
+      //   // rName: "",
+      //   rAddress: "",
+      //   price: 0,
+      // },
+      //price: 0, // Added for storing the calculated price
     };
   }
 
-  
-
   readTextBoxAddressSender = (userInputAddressS) => {
-    this.setState({ newAddressSender: userInputAddressS.target.value });
+    this.setState({ addressSender: userInputAddressS.target.value });
+    // this.setState({ newAddressSender: userInputAddressS.target.value });
   };
 
  
   readTextBoxAddressReceiver = (userInputAddressR) => {
-    this.setState({ newAddressReceiver: userInputAddressR.target.value });
+    this.setState({ addressReceiver: userInputAddressR.target.value });
+    // this.setState({ newAddressReceiver: userInputAddressR.target.value });
+  };
+
+  readTextBoxTotalCost = (userInputCost) => {
+    let cost = (Number(userInputCost.target.value)).toFixed(2);
+    this.setState({ cost: cost });
+    let tax = (Number(cost * 0.15)).toFixed(2);
+    this.setState({ tax: tax});
+    let totalCost = (+cost + +tax).toFixed(2);
+    this.setState({ totalCost: totalCost});
+    // this.setState({ newAddressSender: userInputAddressS.target.value });
   };
 
 
+  // saveAddressSender() {
+  //   this.setState({ addressSender: this.state.newAddressSender });
+  // }
 
-  saveAddressSender() {
-    this.setState({ addressSender: this.state.newAddressSender });
-  }
 
+  // saveAddressReceiver() {
+  //   this.setState({ addressReceiver: this.state.newAddressReceiver });
+  // }
 
-  saveAddressReceiver() {
-    this.setState({ addressReceiver: this.state.newAddressReceiver });
-  }
+  // saveTotalCost() {
+  //   this.setState({ totalCost: this.state.newTotalCost });
+  // }
 
-  saveObjectInfo() {
-    this.setState((prevState) => ({
-      deliveryInfo: {
-        ...prevState.deliveryInfo,
+  // saveObjectInfo() {
+  //   this.setState((prevState) => ({
+  //     deliveryInfo: {
+  //       ...prevState.deliveryInfo,
        
-        sAddress: this.state.newAddressSender,
-     
-        rAddress: this.state.newAddressReceiver,
-        price: this.state.price, // Include price in deliveryInfo
-      },
-    }));
-  }
+  //       sAddress: this.state.addressSender,
+  //       rAddress: this.state.addressReceiver,
+  //       price: this.state.totalCost, // Include price in deliveryInfo
+  //     },
+  //   }));
+  // }
 
-  saveInfo() {
+  // saveInfo() {
+  //   if (document.getElementById("senderAddy").value.trim() !== "") {
+  //     this.saveAddressSender();
+  //   }
 
+  //   if (document.getElementById("receiverAddy").value.trim() !== "") {
+  //     this.saveAddressReceiver();
+  //   }
 
-    if (document.getElementById("senderAddy").value.trim() !== "") {
-      this.saveAddressSender();
-    }
+  //   if (document.getElementById("totalCost").value.trim() !== "") {
+  //     this.saveTotalCost();
+  //   }
 
-  
-
-    if (document.getElementById("receiverAddy").value.trim() !== "") {
-      this.saveAddressReceiver();
-    }
-    this.saveObjectInfo();
-    console.log("New Info Saved!");
-  }
+  //   this.saveObjectInfo();
+  //   console.log("New Info Saved!");
+  // }
 
   submitForm = () => {
-    const url = "http://localhost:3000/api/orders";
+    const url = "http://localhost:3000/api/orders/create";
     fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state.deliveryInfo),
+      body: JSON.stringify(this.state),//.deliveryInfo
     })
       .then((response) => response.json())
       .then((data) => {
@@ -204,9 +221,10 @@ export default class RequestDelivery extends React.Component {
             <div className="px-5 pb-5">
               
               <input
-                onChange={this.readTextBoxAddressReceiver}
-                id="receiverAddy"
+                onChange={this.readTextBoxTotalCost}
+                id="totalCost"
                 placeholder="Cost"
+                // readOnly
                 className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
               />
 
@@ -231,17 +249,17 @@ export default class RequestDelivery extends React.Component {
             <div class="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
               <div class="flex justify-between w-full">
                 <p class="text-base dark:text-white leading-4 text-gray-800">Subtotal</p>
-                <p class="text-base dark:text-gray-300 leading-4 text-gray-600">$56.00</p>
+                <p class="text-base dark:text-gray-300 leading-4 text-gray-600">${this.state.cost}</p>
               </div>
               
               <div class="flex justify-between items-center w-full">
                 <p class="text-base dark:text-white leading-4 text-gray-800">taxPrice</p>
-                <p class="text-base dark:text-gray-300 leading-4 text-gray-600">$8.00</p>
+                <p class="text-base dark:text-gray-300 leading-4 text-gray-600">${this.state.tax}</p>
               </div>
             </div>
             <div class="flex justify-between items-center w-full">
               <p class="text-base dark:text-white font-semibold leading-4 text-gray-800">Total</p>
-              <p class="text-base dark:text-gray-300 font-semibold leading-4 text-gray-600">$36.00</p>
+              <p class="text-base dark:text-gray-300 font-semibold leading-4 text-gray-600">${this.state.totalCost}</p>
             </div>
 
             
@@ -304,7 +322,7 @@ export default class RequestDelivery extends React.Component {
               <div class="flex-1 py-5 pl-1 overflow-hidden">
                 <ul>
                   <li class="text-xs text-gray-600 uppercase">Total cost</li>
-                  <li>{this.state.TotalCost}</li>
+                  <li>{this.state.totalCost}</li>
                 </ul>
               </div>
               <div class="flex-1 py-5 pl-1 overflow-hidden">

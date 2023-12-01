@@ -5,29 +5,31 @@ import Order from "../models/orderModel.js";
 // @route   POST /api/orders/create
 // @access  Public
 const createOrder = async (req, res) => {
-  const { sName, sAddress, rName, rAddress, price } = req.body; // Assuming price is sent from frontend
-
+  // const { sName, sAddress, iName, rName, rAddress, price } = req.body; // Assuming price is sent from frontend
+  const {addressReceiver, addressSender, cost, tax, totalCost } = req.body; // Assuming price is sent from frontend
   const order = new Order({
     // user field should be populated based on logged-in user, using req.user or similar
-    orderItems: [
-      {
-        name: "Custom Delivery",
-        qty: 1,
-        price: price,
-        item: new mongoose.Types.ObjectId(), // Placeholder, adjust as needed
-      },
-    ],
+    user: '65653df0a075f68d8aa8a288',//req.params.id,
+    // orderItems: [
+    //   {
+    //     name: iName,
+    //     // qty: 1,
+    //     // price: price,
+    //     // item: iName,//new mongoose.Types.ObjectId(), // Placeholder, adjust as needed
+    //   },
+    // ],
     shippingAddress: {
-      address: sAddress,
-      city: "Unknown",
-      postalCode: "Unknown",
-      country: "Unknown",
+      sAddress: addressSender,
+      rAddress: addressReceiver,
+      // city: "Unknown",
+      // postalCode: "Unknown",
+      // country: "Unknown",
     },
-    paymentMethod: "Unknown",
-    itemsPrice: price,
-    taxPrice: 0,
-    shippingCost: 0,
-    totalPrice: price,
+    paymentMethod: "Credit Card",
+    cost: cost,
+    tax: tax,
+    // shippingCost: 0,
+    totalCost: totalCost,
   });
 
   const createdOrder = await order.save();
@@ -41,6 +43,7 @@ const getOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({});
   res.json(orders);
 });
+
 
 // @desc    Delete order
 // @route   DELETE /api/orders/:id
