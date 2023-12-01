@@ -60,21 +60,17 @@ const deleteOrder = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Update order
+// @desc    Update order status
 // @route   PUT /api/orders/:id
 // @access  Public
 const updateOrder = asyncHandler(async (req, res) => {
-  const { user, orderItems, shippingAddress, paymentMethod, shippingCost } =
-    req.body;
+  const { status } = req.body;
   const order = await Order.findById(req.params.id);
 
   if (order) {
-    order.user = user;
-    order.orderItems = orderItems;
-    order.shippingAddress = shippingAddress;
-    order.paymentMethod = paymentMethod;
-    order.shippingCost = shippingCost;
-
+    // order.user = user;
+    // order.orderItems = orderItems;
+    order.status = status;
     const updatedOrder = await order.save();
 
     res.json({
