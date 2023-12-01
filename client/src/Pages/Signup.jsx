@@ -3,6 +3,7 @@ import axios from "axios";
 import AuthHeader from "../components/authHeader";
 import { signupFields } from "../constants/formFields";
 import "../index.css";
+import { useNavigate } from "react-router-dom";
 
 const SignupSender = () => {
   const [formData, setFormData] = useState({
@@ -17,15 +18,18 @@ const SignupSender = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(formData);
       const response = await axios.post(
         "http://localhost:3000/api/signup",
         formData
       );
       console.log(response.data);
+      // Redirect to login page on successful signup
+      navigate("/login");
     } catch (error) {
       console.error(
         "Error during signup:",

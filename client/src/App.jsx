@@ -28,8 +28,6 @@ function App() {
           <Route path="/driver-rides" element={<DriverRides />} />
           <Route path="/Feedback" element={<Feedback />} />
           <Route path="/deliveries" element={<Deliveries />} />
-
-          {/* ... other routes */}
         </Routes>
         {/* other components like Footer */}
       </BrowserRouter>

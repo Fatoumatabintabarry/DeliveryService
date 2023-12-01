@@ -1,6 +1,5 @@
 import express from "express";
 import User from "../models/userModel.js";
-import bcrypt from "bcryptjs";
 
 const router = express.Router();
 
@@ -14,14 +13,12 @@ router.post("/signup", async (req, res) => {
       return res.status(400).json({ message: "User already exists" });
     }
 
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-
+    // Create a new user with the provided password
     const user = new User({
       first_name,
       last_name,
       email,
-      password: hashedPassword,
+      password, // Store the password as it is
       role,
     });
 
@@ -29,6 +26,28 @@ router.post("/signup", async (req, res) => {
 
     res.status(201).json({ message: "User created successfully" });
   } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.post("/auth", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ message: "Invalid email or password" });
+    }
+
+    if (user.password === password) {
+      // User authenticated successfully
+      res.json({ message: "Authentication successful", user });
+    } else {
+      // Authentication failed
+      res.status(401).json({ message: "Invalid email or password" });
+    }
+  } catch (error) {
+    console.error("Error during authentication:", error);
     res.status(500).json({ message: error.message });
   }
 });
