@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react'
 
 import styles from '../style'
 import '../index.css'
-import GetEstimate from '../components/GetEstimate'
 import {Navbar, Hero, Testimonial, Footer} from '../components/index';
 import Features from '../components/Features';
 import DriverPortal from './DriverPortal';
 import CreateReview from '../components/CreateReview';
 import DisplayReviews from '../components/DisplayReviews';
+import GetEstimateHomepage from '../components/GetEstimateHomepage'
 
 const home = () => {
   const [reviews, setReviews] = useState([]);
@@ -78,7 +78,7 @@ const home = () => {
 
         <div className={` ${styles.paddingY} ${styles.flexStart} bg-[#F4F5FA]`}>
           <div className={`${styles.boxWidth}`}>
-            <GetEstimate />
+            <GetEstimateHomepage />
           </div>
          </div>
 
