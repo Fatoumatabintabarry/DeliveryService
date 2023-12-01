@@ -28,20 +28,22 @@ export default class RequestDelivery extends React.Component {
   }
 
   readTextBoxAddressSender = (userInputAddressS) => {
-    this.setState({ newAddressSender: userInputAddressS.target.value });
+    this.setState({ addressSender: userInputAddressS.target.value });
+    // this.setState({ newAddressSender: userInputAddressS.target.value });
   };
 
   readTextBoxAddressReceiver = (userInputAddressR) => {
-    this.setState({ newAddressReceiver: userInputAddressR.target.value });
+    this.setState({ addressReceiver: userInputAddressR.target.value });
+    // this.setState({ newAddressReceiver: userInputAddressR.target.value });
   };
 
   saveAddressSender() {
     this.setState({ addressSender: this.state.newAddressSender });
   }
 
-  saveAddressReceiver() {
-    this.setState({ addressReceiver: this.state.newAddressReceiver });
-  }
+  // saveAddressReceiver() {
+  //   this.setState({ addressReceiver: this.state.newAddressReceiver });
+  // }
 
   saveObjectInfo() {
     this.setState((prevState) => ({
@@ -69,13 +71,13 @@ export default class RequestDelivery extends React.Component {
   }
 
   submitForm = () => {
-    const url = "http://localhost:3000/api/orders";
+    const url = "http://localhost:3000/api/orders/create";
     fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state.deliveryInfo),
+      body: JSON.stringify(this.state), //.deliveryInfo
     })
       .then((response) => response.json())
       .then((data) => {

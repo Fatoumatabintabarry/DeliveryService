@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import "../quotation.css";
+
 const GetEstimate = ({ setPrice }) => {
   const [Height, setHeight] = useState("");
   const [Weight, setWeight] = useState("");
   const [Description, setDescription] = useState("");
   const [Distance, setDistance] = useState("");
-  const [Price, setPriceLocal] = useState(0);
+  const [localPrice, setLocalPrice] = useState(0); // Local state for price
 
   function handleForm(event) {
     event.preventDefault();
     let productDetails = {
       Height: Height,
       Weight: Weight,
-      SDescription: Description,
-
+      Description: Description,
       Distance: Distance,
     };
+
     fetch("/api/quote", {
       method: "post",
       headers: {
@@ -55,7 +56,8 @@ const GetEstimate = ({ setPrice }) => {
         }
 
         setData(data);
-        props.setPrice(calculatedPrice); // Update parent state
+        setPrice(calculatedPrice); // Update parent state
+        setLocalPrice(calculatedPrice); // Also update local state
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -135,14 +137,14 @@ const GetEstimate = ({ setPrice }) => {
               </button>
             </div>
 
-            {Price !== 0 && (
+            {localPrice !== 0 && (
               <div>
-                <h4>Your delivery estimate is ${Price}</h4>
+                <h4>Your delivery estimate is ${localPrice}</h4>
               </div>
             )}
           </div>
 
-          {Price !== 0 && (
+          {localPrice !== 0 && (
             <div className="flex justify-center items-center ">
               <a
                 href="#"
