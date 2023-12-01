@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import AuthHeader from "../components/authHeader";
 import { loginFields } from "../constants/formFields";
 import "../index.css";
@@ -8,22 +9,35 @@ const login = () => {
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
-    // Add other fields if needed
   });
+  const [errorMessage, setErrorMessage] = useState(""); // State to hold error message
+  const navigate = useNavigate(); // Hook for navigation
 
   const handleChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
+    setErrorMessage(""); // Clear error message when user starts typing
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/users/auth", loginData);
+      const response = await axios.post(
+        "http://localhost:3000/api/auth",
+        loginData
+      );
       console.log(response.data);
-      // Redirect or handle response as needed
+      if (response.status === 200) {
+        // Login successful, redirect to deliverysolutions
+        navigate("/deliverysolutions");
+      }
     } catch (error) {
-      console.error("Error during login:", error);
-      // Handle error (show message to user, etc.)
+      if (error.response && error.response.status === 401) {
+        // Handle 401 Unauthorized response
+        setErrorMessage("Invalid email or password.");
+      } else {
+        console.error("Error during login:", error);
+        setErrorMessage("An error occurred during login.");
+      }
     }
   };
   return (
@@ -37,7 +51,14 @@ const login = () => {
       />
       <div className=" lg:w-1/2 justify-center items-center  form-container">
         <div className="w-full px-8 md:px-32 lg:px-24 ">
-          <form className=" rounded-lg  shadow-2xl p-10 " method="POST">
+          <form
+            onSubmit={handleSubmit}
+            className=" rounded-lg  shadow-2xl p-10 "
+            method="POST"
+          >
+            {errorMessage && (
+              <div className="error-message">{errorMessage}</div>
+            )}
             <div class="form-group">
               <label for="profile">I am a: </label>
               <select name="profile" id="profile">
