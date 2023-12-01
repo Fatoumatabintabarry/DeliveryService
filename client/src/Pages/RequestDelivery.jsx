@@ -1,93 +1,94 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export default class RequestDelivery extends React.Component {
+class RequestDelivery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      addressReceiver: "",
-      // newAddressReceiver: "",
-      addressSender: "",
-      // newAddressSender: "",
-      cost: 0.00,
-      tax: 0.00,
-      totalCost: 0.00,
+      addressReceiver: "address of receiver 4020 Linz",
+      newAddressReceiver: "",
+      addressSender: " adress of sender 1000 Vienna",
+      newAddressSender: "",
+      newTotalCost: "",
 
-      // newTotalCost: "",
-
-      // deliveryInfo: {
-      //   // sName: "",
-      //   sAddress: "",
-      //   // rName: "",
-      //   rAddress: "",
-      //   price: 0,
-      // },
-      //price: 0, // Added for storing the calculated price
+      deliveryInfo: {
+        sName: "",
+        sAddress: "",
+        rName: "",
+        rAddress: "",
+      },
+      price: props.price, // Added for storing the calculated price
     };
+    this.navigate = React.createRef();
   }
 
-  readTextBoxAddressSender = (userInputAddressS) => {
-    this.setState({ addressSender: userInputAddressS.target.value });
-    // this.setState({ newAddressSender: userInputAddressS.target.value });
+  componentDidUpdate(prevProps) {
+    // Update state when new price is received
+    if (this.props.price !== prevProps.price) {
+      this.setState({ price: this.props.price });
+    }
+  }
+
+  componentDidMount() {
+    // Assign the navigate function on mount
+    this.navigate.current = this.props.navigate;
+  }
+
+  handlePayment = () => {
+    this.props.navigate("/PaymentForm");
   };
 
- 
+  readTextBoxAddressSender = (userInputAddressS) => {
+    this.setState({ newAddressSender: userInputAddressS.target.value });
+  };
+
   readTextBoxAddressReceiver = (userInputAddressR) => {
     this.setState({ addressReceiver: userInputAddressR.target.value });
     // this.setState({ newAddressReceiver: userInputAddressR.target.value });
   };
 
   readTextBoxTotalCost = (userInputCost) => {
-    let cost = (Number(userInputCost.target.value)).toFixed(2);
+    let cost = Number(userInputCost.target.value).toFixed(2);
     this.setState({ cost: cost });
-    let tax = (Number(cost * 0.15)).toFixed(2);
-    this.setState({ tax: tax});
+    let tax = Number(cost * 0.15).toFixed(2);
+    this.setState({ tax: tax });
     let totalCost = (+cost + +tax).toFixed(2);
-    this.setState({ totalCost: totalCost});
+    this.setState({ totalCost: totalCost });
     // this.setState({ newAddressSender: userInputAddressS.target.value });
   };
-
 
   // saveAddressSender() {
   //   this.setState({ addressSender: this.state.newAddressSender });
   // }
 
-
   // saveAddressReceiver() {
   //   this.setState({ addressReceiver: this.state.newAddressReceiver });
   // }
 
-  // saveTotalCost() {
-  //   this.setState({ totalCost: this.state.newTotalCost });
-  // }
+  saveObjectInfo() {
+    this.setState((prevState) => ({
+      deliveryInfo: {
+        ...prevState.deliveryInfo,
 
-  // saveObjectInfo() {
-  //   this.setState((prevState) => ({
-  //     deliveryInfo: {
-  //       ...prevState.deliveryInfo,
-       
-  //       sAddress: this.state.addressSender,
-  //       rAddress: this.state.addressReceiver,
-  //       price: this.state.totalCost, // Include price in deliveryInfo
-  //     },
-  //   }));
-  // }
+        sAddress: this.state.newAddressSender,
 
-  // saveInfo() {
-  //   if (document.getElementById("senderAddy").value.trim() !== "") {
-  //     this.saveAddressSender();
-  //   }
+        rAddress: this.state.newAddressReceiver,
+        price: this.state.price, // Include price in deliveryInfo
+      },
+    }));
+  }
 
-  //   if (document.getElementById("receiverAddy").value.trim() !== "") {
-  //     this.saveAddressReceiver();
-  //   }
+  saveInfo() {
+    if (document.getElementById("senderAddy").value.trim() !== "") {
+      this.saveAddressSender();
+    }
 
-  //   if (document.getElementById("totalCost").value.trim() !== "") {
-  //     this.saveTotalCost();
-  //   }
-
-  //   this.saveObjectInfo();
-  //   console.log("New Info Saved!");
-  // }
+    if (document.getElementById("receiverAddy").value.trim() !== "") {
+      this.saveAddressReceiver();
+    }
+    this.saveObjectInfo();
+    console.log("New Info Saved!");
+  }
 
   submitForm = () => {
     const url = "http://localhost:3000/api/orders/create";
@@ -96,7 +97,7 @@ export default class RequestDelivery extends React.Component {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state),//.deliveryInfo
+      body: JSON.stringify(this.state), //.deliveryInfo
     })
       .then((response) => response.json())
       .then((data) => {
@@ -108,6 +109,9 @@ export default class RequestDelivery extends React.Component {
   };
 
   render() {
+    const tax = this.state.price * 0.15; // 15% tax
+    const subtotal = this.state.price;
+    const total = subtotal + tax;
     return (
       <div className="flex h-screen mb-36 ">
         <div className="m-auto w-full max-w-4xl">
@@ -151,17 +155,14 @@ export default class RequestDelivery extends React.Component {
             </div>
 
             <div className="px-5 pb-5">
-            
               <input
                 onChange={this.readTextBoxAddressSender}
                 id="senderAddy"
                 placeholder="Address"
                 className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
               />
-            
             </div>
 
-            
             <div className="flex">
               <div class="flex-1 py-5 pl-5 oPostal codeverflow-hidden">
                 <svg
@@ -197,77 +198,69 @@ export default class RequestDelivery extends React.Component {
             </div>
             <div class="flex-none pt-2.5 pr-2.5 pl-1"></div>
             <div className="px-5 pb-5">
-              
               <input
                 onChange={this.readTextBoxAddressReceiver}
                 id="receiverAddy"
                 placeholder="Address"
                 className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
               />
-
-
             </div>
 
             <div className="flex">
               <div class="flex-1 py-5 pl-5 oPostal codeverflow-hidden">
-             
-                <h1 class="inline text-2xl font-semibold leading-none">
-                  Cost
-                </h1>
+                <h1 class="inline text-2xl font-semibold leading-none">Cost</h1>
               </div>
             </div>
             <div class="flex-none pt-2.5 pr-2.5 pl-1"></div>
 
             <div className="px-5 pb-5">
-              
               <input
-                onChange={this.readTextBoxTotalCost}
-                id="totalCost"
-                placeholder="Cost"
-                // readOnly
+                value={`Cost: $${this.props.price.toFixed(2)}`} // Use props.price
+                readOnly
                 className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
               />
-
-
             </div>
-      
-            
-      
 
-        
-        
-        
-        
-         <hr className="mt-4" />
-          
-              
-          {/* Pre-filled Addresses */}
-          <div className="mt-5 bg-white shadow cursor-pointer rounded-xl">
+            <hr className="mt-4" />
 
-          <div class=" px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 dark:bg-gray-800 space-y-6 ">
-            <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800">Summary</h3>
-            <div class="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
-              <div class="flex justify-between w-full">
-                <p class="text-base dark:text-white leading-4 text-gray-800">Subtotal</p>
-                <p class="text-base dark:text-gray-300 leading-4 text-gray-600">${this.state.cost}</p>
+            {/* Pre-filled Addresses */}
+            <div className="mt-5 bg-white shadow cursor-pointer rounded-xl">
+              <div class=" px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 dark:bg-gray-800 space-y-6 ">
+                <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800">
+                  Summary
+                </h3>
+                <div className="mt-5 bg-white shadow cursor-pointer rounded-xl">
+                  <div className="px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 dark:bg-gray-800 space-y-6 ">
+                    {/* Subtotal, Tax, and Total */}
+                    <div className="flex justify-between items-center w-full">
+                      <p className="text-base dark:text-white leading-4 text-gray-800">
+                        Subtotal
+                      </p>
+                      <p className="text-base dark:text-gray-300 leading-4 text-gray-600">
+                        ${subtotal.toFixed(2)}
+                      </p>
+                    </div>
+                    <div className="flex justify-between items-center w-full">
+                      <p className="text-base dark:text-white leading-4 text-gray-800">
+                        Tax
+                      </p>
+                      <p className="text-base dark:text-gray-300 leading-4 text-gray-600">
+                        ${tax.toFixed(2)}
+                      </p>
+                    </div>
+                    <div className="flex justify-between items-center w-full">
+                      <p className="text-base dark:text-white font-semibold leading-4 text-gray-800">
+                        Total
+                      </p>
+                      <p className="text-base dark:text-gray-300 font-semibold leading-4 text-gray-600">
+                        ${total.toFixed(2)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
-              <div class="flex justify-between items-center w-full">
-                <p class="text-base dark:text-white leading-4 text-gray-800">taxPrice</p>
-                <p class="text-base dark:text-gray-300 leading-4 text-gray-600">${this.state.tax}</p>
-              </div>
-            </div>
-            <div class="flex justify-between items-center w-full">
-              <p class="text-base dark:text-white font-semibold leading-4 text-gray-800">Total</p>
-              <p class="text-base dark:text-gray-300 font-semibold leading-4 text-gray-600">${this.state.totalCost}</p>
-            </div>
-
-            
-       
-              
-            </div>
               {/* Button request delivery*/}
-           <button
+              <button
                 type="button"
                 className="relative w-full flex 
                   justify-center items-center px-5 py-2.5 font-medium tracking-wide text-white 
@@ -297,53 +290,47 @@ export default class RequestDelivery extends React.Component {
                 </button>
               </button>
             </div>
-            
-            
-
-
-
           </div>
-          <div className="flex rounded-lg shadow mt-6 mb-6 ">
-            
-              {/* Address details */}
-              <div class="flex-1 py-5 pl-5 overflow-hidden mb-6">
-                <ul>
-                  <li class="text-xs text-gray-600 uppercase ">Receiver</li>
-                  <li>{this.state.addressReceiver}</li>
-                </ul>
-              </div>
-
-              <div class="flex-1 py-5 pl-1 overflow-hidden">
-                <ul>
-                  <li class="text-xs text-gray-600 uppercase">Ship from</li>
-                  <li>{this.state.addressSender}</li>
-                </ul>
-              </div>
-              <div class="flex-1 py-5 pl-1 overflow-hidden">
-                <ul>
-                  <li class="text-xs text-gray-600 uppercase">Total cost</li>
-                  <li>{this.state.totalCost}</li>
-                </ul>
-              </div>
-              <div class="flex-1 py-5 pl-1 overflow-hidden">
-              <a href="#" className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 
-            dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-              Pay 
-            </a>
-            
-          </div>
-              
-
-             
+          <div className="flex rounded-lg shadow mt-6  ">
+            {/* Address details */}
+            <div class="flex-1 py-5 pl-5 overflow-hidden">
+              <ul>
+                <li class="text-xs text-gray-600 uppercase ">Receiver</li>
+                <li>{this.state.addressReceiver}</li>
+              </ul>
             </div>
-         
 
+            <div class="flex-1 py-5 pl-1 overflow-hidden">
+              <ul>
+                <li class="text-xs text-gray-600 uppercase">Ship from</li>
+                <li>{this.state.addressSender}</li>
+              </ul>
+            </div>
+            <div class="flex-1 py-5 pl-1 overflow-hidden">
+              <ul>
+                <li className="text-xs text-gray-600 uppercase">Total cost</li>
+                <li>${total.toFixed(2)}</li>{" "}
+                {/* Display the calculated total */}
+              </ul>
+            </div>
+            <div class="flex-1 py-5 pl-1 overflow-hidden">
+              <button
+                onClick={this.handlePayment} // Call handlePayment on click
+                className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 
+            dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+              >
+                Pay
+              </button>
+            </div>
+          </div>
         </div>
-
-        
       </div>
     );
   }
-
-  //export default RequestDelivery;
 }
+function RequestDeliveryWithNavigate(props) {
+  let navigate = useNavigate();
+  return <RequestDelivery {...props} navigate={navigate} />;
+}
+
+export default RequestDeliveryWithNavigate;

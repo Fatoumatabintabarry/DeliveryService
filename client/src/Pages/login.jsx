@@ -1,38 +1,43 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import AuthHeader from "../components/authHeader";
 import { loginFields } from "../constants/formFields";
 import "../index.css";
 
-const login = () => {
+const Login = () => {
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
+    profile: "Sender", // Default profile type
   });
-  const [errorMessage, setErrorMessage] = useState(""); // State to hold error message
-  const navigate = useNavigate(); // Hook for navigation
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
-    setErrorMessage(""); // Clear error message when user starts typing
+    setErrorMessage("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/auth",
-        loginData
-      );
+      const response = await axios.post("http://localhost:3000/api/auth", {
+        email: loginData.email,
+        password: loginData.password,
+      });
       console.log(response.data);
       if (response.status === 200) {
-        // Login successful, redirect to deliverysolutions
-        navigate("/deliverysolutions");
+        // Redirect based on the user's role from the response
+        const userRole = response.data.role;
+        if (userRole === "Driver") {
+          navigate("/driver-portal");
+        } else {
+          navigate("/deliverysolutions");
+        }
       }
     } catch (error) {
       if (error.response && error.response.status === 401) {
-        // Handle 401 Unauthorized response
         setErrorMessage("Invalid email or password.");
       } else {
         console.error("Error during login:", error);
@@ -114,4 +119,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
