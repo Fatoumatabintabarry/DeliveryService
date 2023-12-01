@@ -1,6 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export default class RequestDelivery extends React.Component {
+class RequestDelivery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,6 +19,7 @@ export default class RequestDelivery extends React.Component {
       },
       price: props.price, // Added for storing the calculated price
     };
+    this.navigate = React.createRef();
   }
 
   componentDidUpdate(prevProps) {
@@ -26,6 +28,15 @@ export default class RequestDelivery extends React.Component {
       this.setState({ price: this.props.price });
     }
   }
+
+  componentDidMount() {
+    // Assign the navigate function on mount
+    this.navigate.current = this.props.navigate;
+  }
+
+  handlePayment = () => {
+    this.props.navigate("/PaymentForm");
+  };
 
   readTextBoxAddressSender = (userInputAddressS) => {
     this.setState({ newAddressSender: userInputAddressS.target.value });
@@ -303,19 +314,23 @@ export default class RequestDelivery extends React.Component {
               </ul>
             </div>
             <div class="flex-1 py-5 pl-1 overflow-hidden">
-              <a
-                href="#"
+              <button
+                onClick={this.handlePayment} // Call handlePayment on click
                 className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 
             dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
               >
                 Pay
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
     );
   }
-
-  //export default RequestDelivery;
 }
+function RequestDeliveryWithNavigate(props) {
+  let navigate = useNavigate();
+  return <RequestDelivery {...props} navigate={navigate} />;
+}
+
+export default RequestDeliveryWithNavigate;
