@@ -41,7 +41,8 @@ router.post("/auth", async (req, res) => {
 
     if (user.password === password) {
       // User authenticated successfully
-      res.json({ message: "Authentication successful", user });
+      // Include the user's role in the response
+      res.json({ message: "Authentication successful", role: user.role });
     } else {
       // Authentication failed
       res.status(401).json({ message: "Invalid email or password" });
