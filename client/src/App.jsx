@@ -11,6 +11,8 @@ import DriverPortal from "./Pages/DriverPortal";
 import DriverRides from "./Pages/DriverRides";
 import Feedback from "./Pages/Feedback";
 import Deliveries from "./Pages/deliveries";
+import PaymentForm from "./components/PaymentForm";
+import OrderConfirmation from "./Pages/OrderConfirmation";
 
 function App() {
   return (
@@ -28,6 +30,10 @@ function App() {
           <Route path="/driver-rides" element={<DriverRides />} />
           <Route path="/Feedback" element={<Feedback />} />
           <Route path="/deliveries" element={<Deliveries />} />
+          <Route path="/PaymentForm" element={<PaymentForm />} />
+          <Route path="/OrderConfirmation" element={<OrderConfirmation />} />
+          
+          
         </Routes>
         {/* other components like Footer */}
       </BrowserRouter>
